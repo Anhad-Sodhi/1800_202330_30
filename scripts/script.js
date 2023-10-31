@@ -1,6 +1,11 @@
-function loadGlobalElements() {
-    console.log($("#navbar").load("./text/navbar.html"));
+//------------------------------------------------
+// Call this function when the "logout" button is clicked
+//-------------------------------------------------
+function logout() {
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        console.log("logging out user");
+    }).catch((error) => {
+        // An error happened.
+    });
 }
-loadGlobalElements();
-
-//TODO: Make it work lol
