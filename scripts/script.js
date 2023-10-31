@@ -1,4 +1,6 @@
-function sayHello() {
-    
+function loadGlobalElements() {
+    console.log($("#navbar").load("./text/navbar.html"));
 }
-//sayHello();
+loadGlobalElements();
+
+//TODO: Make it work lol
