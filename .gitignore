@@ -2,4 +2,4 @@
 *.logs
 node_modules/
 .vscode/
-//TODO: ADD FIREBASE API TEAMBBY30 TO GITIGNORE
+firebaseAPI_TEAMBBY30.js
