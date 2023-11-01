@@ -51,18 +51,20 @@
 
     <!-- Image Section -->
     <div id="images">
-        <button onclick="ChangeImageForward()">&gt;</button>
-        <button onclick="ChangeImageBackward()">&lt;</button>
-        <img id="productImage" src="">
+        <button id="imageBackward" onclick="ChangeImageBackward()">&lt;</button>
+        <img id="productImage" src="./images/AM01.jpg">
+        <button id="imageForward" onclick="ChangeImageForward()">&gt;</button>
+
+        <!-- <img class="card-image card-img-top" src="./images/AM01.jpg" alt="..." /> -->
     </div>
 
     <!-- Product Description -->
     <div id="description">
-        <p id="productName"></p>
-        <p id="userName"></p>
-        <p id="price"></p>
-        <p id="information"></p>
+        <p id="productName">Banana</p>
+        <p id="userName">John Smith</p>
+        <p id="price">$45.00</p>
     </div>
+    <p id="information">This is a delicious looking banana</p>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->

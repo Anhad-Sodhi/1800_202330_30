@@ -1,1 +1,97 @@
+/* Style for listing page  */
+#productImage {
+    width: 70%;   
+}
+#imageForward {
+    float: right;
+    margin-left: 5px;
+}
+#imageBackward {
+    float: left;
+    margin-right: 5px;
+}
+#images {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#productName{
+    margin-left: auto;
+    margin-right: auto;
+}
+#userName {
+    margin-left: auto;
+    margin-right: auto;
+}
+#price {
+    margin-left: auto;
+    margin-right: auto;
+}
+#information {
+    text-align: center;
+}
+
+
+
+
+/* Style for browsing page */
+#listing1 {
+    display: grid;
+    height: 200px;
+    width: 95vw;
+    background-size: 100%, 100%;
+    background-image: url("../images/drink2.jpg");
+    background-repeat: no-repeat;
+    grid-template-rows: 60% 20% 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#productName1 {
+    grid-row: 2 / span 1;
+    /* grid-column: 1 / span 1; */
+}
+#userName1 {
+    grid-row: 2 / span 1;
+    /* grid-column: 2 / span 1; */
+}
+#price1 {
+    grid-row: 2 / span 1;
+    /* grid-column: 3 / span 1; */
+}
+#information1 {
+    grid-row: 3 / span 1;
+}
+#listing2 {
+    display: grid;
+    height: 200px;
+    width: 95vw;
+    background-size: 100%, 100%;
+    background-image: url("../images/drink1.jpg");
+    background-repeat: no-repeat;
+    grid-template-rows: 60% 20% 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#productName2 {
+    grid-row: 2 / span 1;
+    /* grid-column: 1 / span 1; */
+}
+#userName2 {
+    grid-row: 2 / span 1;
+    /* grid-column: 2 / span 1; */
+}
+#price2 {
+    grid-row: 2 / span 1;
+    /* grid-column: 3 / span 1; */
+}
+#information2 {
+    grid-row: 3 / span 1;
+}
 

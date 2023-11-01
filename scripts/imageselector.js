@@ -12,8 +12,8 @@ function changeImageForward() {
 
 function changeImageBackward() {
     index = index - 1;
-    if (index == 0) {
-       index = imageList.length;
+    if (index == -1) {
+       index = imageList.length - 1;
     }
     var image1 = document.getElementById("productImage");
     image1.src = imageList[index];
