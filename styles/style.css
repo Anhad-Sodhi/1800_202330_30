@@ -94,6 +94,9 @@
 #information2 {
     grid-row: 3 / span 1;
 }
+#yourListings {
+    text-align: center;
+}
 
 /* Style for submission form page */
 #submission-form {
