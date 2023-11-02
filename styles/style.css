@@ -95,3 +95,7 @@
     grid-row: 3 / span 1;
 }
 
+/* Style for submission form page */
+#submission-form {
+    padding-top: 250px;
+}
