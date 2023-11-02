@@ -97,3 +97,12 @@
 #yourListings {
     text-align: center;
 }
+
+/* Style for submission form page */
+#submission-form {
+    padding-top: 250px;
+}
+
+.btn-block {
+    width: 100%;
+}
