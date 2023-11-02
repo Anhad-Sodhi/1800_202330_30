@@ -38,7 +38,7 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
       rel="stylesheet"
     />
-    <style>
+    <!-- <style>
       body {
         margin: 0px;
         padding: 0px;
@@ -47,7 +47,7 @@
         height: 900px;
         width: 100vw;
       }
-    </style>
+    </style> -->
   </head>
 
   <body>
@@ -63,20 +63,21 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- Map -->
-    <div id="map" style="width: 400px; height: 300px"></div>
-    <script>
+    <div id="map" style="width: 100vw; height: 100vh"></div>
+    <!-- <script>
       mapboxgl.accessToken =
         "pk.eyJ1IjoiZGFuZDUiLCJhIjoiY2xvZnkyZHcxMHA4bjJsbzl2bXl2cXNpeSJ9.NkYxQSRO1UmyP1G_xk5D1g";
       var map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/dand5/clofy6cum004j01qg3xph52ua",
       });
-    </script>
+    </script> -->
 
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/map.js"></script>
   </body>
 </html>
