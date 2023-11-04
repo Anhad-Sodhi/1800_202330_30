@@ -5,10 +5,15 @@
 #imageForward {
     float: right;
     margin-left: 5px;
+    width: 100px;
 }
 #imageBackward {
     float: left;
     margin-right: 5px;
+    width: 100px;
+}
+#imageBackward:hover, #imageForward:hover {
+    opacity: 50%;
 }
 #images {
     display:flex;
@@ -34,6 +39,33 @@
 }
 #information {
     text-align: center;
+}
+
+
+/* Style for home page */
+#myListing1 {
+    display: grid;
+    height: 200px;
+    width: 75vw;
+    background-size: 100%, 100%;
+    background-image: url("../images/drink2.jpg");
+    background-repeat: no-repeat;
+    grid-template-rows: 60% 20% 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#myListing2 {
+    display: grid;
+    height: 200px;
+    width: 75vw;
+    background-size: 100%, 100%;
+    background-image: url("../images/drink2.jpg");
+    background-repeat: no-repeat;
+    grid-template-rows: 60% 20% 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 
@@ -110,28 +142,4 @@
 
 .btn-block {
     width: 100%;
-}
-#myListing1 {
-    display: grid;
-    height: 200px;
-    width: 75vw;
-    background-size: 100%, 100%;
-    background-image: url("../images/drink2.jpg");
-    background-repeat: no-repeat;
-    grid-template-rows: 60% 20% 20%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
-#myListing2 {
-    display: grid;
-    height: 200px;
-    width: 75vw;
-    background-size: 100%, 100%;
-    background-image: url("../images/drink2.jpg");
-    background-repeat: no-repeat;
-    grid-template-rows: 60% 20% 20%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
 }
