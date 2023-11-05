@@ -143,3 +143,8 @@
 .btn-block {
     width: 100%;
 }
+
+/* navbar styling */
+#dropdown-menu {
+    width: 100vw;
+}
