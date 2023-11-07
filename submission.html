@@ -22,6 +22,16 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
     <!-- Other libraries go here -->
     <link
       rel="stylesheet"
@@ -47,28 +57,33 @@
     <!-- form -->
     <div id="submission-form">
       <p>Upload images of your food</p>
-      <div class="input-group mb-3">
-        <input type="file" class="form-control" id="inputGroupFile02">
+      <div class="input-group">
+        <input type="file" class="form-control" id="food-photo">
         <label class="input-group-text" for="inputGroupFile02">Upload</label>
-      </div>    
-      <div class="input-group mb-3">
-        <span class="input-group-text">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-      </div>
-      <div class="form-floating mb-3">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Description</label>
       </div>
       <div class="form-floating">
-        <select class="form-select" id="floatingSelect" aria-label="Floating label">
+        <select class="form-select" id="food-type" aria-label="Floating label">
           <option selected>Select</option>
           <option value="1">Fruit</option>
           <option value="2">Vegetable</option>
           <option value="3">Other</option>
         </select>
         <label for="floatingSelect">What type of food are you selling</label>
-        <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
       </div>
+      <p>Enter price of your food</p>    
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)">
+      </div>
+      <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Leave a comment here" id="food-description" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Description</label>
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+      </div>
+      <button type="button" class="btn btn-success btn-lg btn-block" id="submit-button">Submit</button>
     </div>
 
     <!-- footer -->
@@ -80,5 +95,8 @@
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/script.js"></script>
+    <script src="scripts/skeleton.js"></script>
+    <script src="./scripts/firebaseAPI_TEAMBBY30.js"></script>
+    <script src="scripts/subdata.js"></script>
   </body>
 </html>

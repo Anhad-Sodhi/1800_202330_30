@@ -137,14 +137,24 @@
 
 /* Style for submission form page */
 #submission-form {
-    padding-top: 250px;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    margin-top: 40%;
 }
 
 .btn-block {
     width: 100%;
 }
 
-/* navbar styling */
-#dropdown-menu {
-    width: 100vw;
+.input-group{
+    padding-bottom: 20px;
+}
+
+.form-floating {
+    padding-bottom: 15px;
+}
+
+.col-12 {
+    padding-bottom: 20px;
 }
