@@ -72,7 +72,7 @@
 
 
 /* Style for browsing page */
-#listing1 {
+.list {
     display: grid;
     height: 200px;
     width: 95vw;
@@ -84,22 +84,30 @@
     margin-right: auto;
     margin-top: 20px;
 }
-#productName1 {
+.prodName {
     grid-row: 2 / span 1;
+    margin-left: auto;
+    margin-right: auto;
     /* grid-column: 1 / span 1; */
 }
-#userName1 {
+.userName {
     grid-row: 2 / span 1;
+    margin-left: auto;
+    margin-right: auto;
     /* grid-column: 2 / span 1; */
 }
-#price1 {
+.price {
     grid-row: 2 / span 1;
+    margin-left: auto;
+    margin-right: auto;
     /* grid-column: 3 / span 1; */
 }
-#information1 {
+.info {
     grid-row: 3 / span 1;
+    margin-left: auto;
+    margin-right: auto;
 }
-#listing2 {
+/* #listing2 {
     display: grid;
     height: 200px;
     width: 95vw;
@@ -110,18 +118,19 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-}
-#productName2 {
+} */
+/* #productName2 {
     grid-row: 2 / span 1;
-    /* grid-column: 1 / span 1; */
-}
+    /* grid-column: 1 / span 1; 
+}*/
+/*
 #userName2 {
     grid-row: 2 / span 1;
-    /* grid-column: 2 / span 1; */
+    /* grid-column: 2 / span 1; 
 }
 #price2 {
     grid-row: 2 / span 1;
-    /* grid-column: 3 / span 1; */
+    /* grid-column: 3 / span 1; 
 }
 #information2 {
     grid-row: 3 / span 1;
@@ -133,7 +142,7 @@
     text-align: center;
     height: 400px;
     overflow: scroll;
-}
+} */
 
 /* Style for submission form page */
 #submission-form {
