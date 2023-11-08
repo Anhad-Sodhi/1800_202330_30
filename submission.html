@@ -62,16 +62,16 @@
       <div class="form-floating">
         <select class="form-select" id="food-type" aria-label="Floating label" required>
           <option selected>Select</option>
-          <option value="1">Fruit</option>
-          <option value="2">Vegetable</option>
-          <option value="3">Other</option>
+          <option value="fruit">Fruit</option>
+          <option value="vegetable">Vegetable</option>
+          <option value="other">Other</option>
         </select>
         <label for="floatingSelect">What type of food are you selling</label>
       </div>
       <p>Enter price of your food</p>    
       <div class="input-group mb-3">
         <span class="input-group-text">$</span>
-        <input type="text" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)" pattern="[0,9]" required>
+        <input type="number" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)" required>
       </div>
       <div class="form-floating mb-3">
         <textarea class="form-control" placeholder="Leave a comment here" id="food-description" style="height: 100px" max="50"></textarea>
