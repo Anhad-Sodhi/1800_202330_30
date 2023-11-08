@@ -53,14 +53,14 @@
 
     <!-- form -->
     <div id="submission-form">
-      <input id="ProductName" class="form-control" type="text" placeholder="Product name" aria-label="default input example" required>
+      <input id="ProductName" class="form-control" type="text" placeholder="Product name" aria-label="default input example">
       <p>Upload images of your food</p>
       <div class="input-group">
-        <input type="file" class="form-control" id="food-photo" required>
+        <input type="file" class="form-control" id="food-photo">
         <label class="input-group-text" for="inputGroupFile02">Upload</label>
       </div>
       <div class="form-floating">
-        <select class="form-select" id="food-type" aria-label="Floating label" required>
+        <select class="form-select" id="food-type" aria-label="Floating label">
           <option selected>Select</option>
           <option value="fruit">Fruit</option>
           <option value="vegetable">Vegetable</option>
@@ -71,7 +71,7 @@
       <p>Enter price of your food</p>    
       <div class="input-group mb-3">
         <span class="input-group-text">$</span>
-        <input type="number" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)" required>
+        <input type="number" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)">
       </div>
       <div class="form-floating mb-3">
         <textarea class="form-control" placeholder="Leave a comment here" id="food-description" style="height: 100px" max="50"></textarea>
@@ -79,9 +79,9 @@
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+        <input type="text" class="form-control" id="address" placeholder="1234 Main St">
       </div>
-      <button type="submit" class="btn btn-success btn-lg btn-block" id="submit-button">Submit</button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" id="submit-button" onclick="savePost()">Submit</button>
     </div>
 
     <!-- footer -->
