@@ -53,13 +53,14 @@
 
     <!-- form -->
     <div id="submission-form">
+      <input id="ProductName" class="form-control" type="text" placeholder="Product name" aria-label="default input example" required>
       <p>Upload images of your food</p>
       <div class="input-group">
-        <input type="file" class="form-control" id="food-photo">
+        <input type="file" class="form-control" id="food-photo" required>
         <label class="input-group-text" for="inputGroupFile02">Upload</label>
       </div>
       <div class="form-floating">
-        <select class="form-select" id="food-type" aria-label="Floating label">
+        <select class="form-select" id="food-type" aria-label="Floating label" required>
           <option selected>Select</option>
           <option value="1">Fruit</option>
           <option value="2">Vegetable</option>
@@ -70,17 +71,17 @@
       <p>Enter price of your food</p>    
       <div class="input-group mb-3">
         <span class="input-group-text">$</span>
-        <input type="text" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)">
+        <input type="text" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)" pattern="[0,9]" required>
       </div>
       <div class="form-floating mb-3">
-        <textarea class="form-control" placeholder="Leave a comment here" id="food-description" style="height: 100px"></textarea>
+        <textarea class="form-control" placeholder="Leave a comment here" id="food-description" style="height: 100px" max="50"></textarea>
         <label for="floatingTextarea2">Description</label>
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
       </div>
-      <button type="button" class="btn btn-success btn-lg btn-block" id="submit-button">Submit</button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" id="submit-button">Submit</button>
     </div>
 
     <!-- footer -->
@@ -95,5 +96,6 @@
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI_TEAMBBY30.js"></script>
     <script src="./scripts/subdata.js"></script>
+    <script src="./scripts/authentication.js"></script>
   </body>
 </html>

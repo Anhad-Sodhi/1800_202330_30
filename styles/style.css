@@ -143,16 +143,16 @@
     margin-top: 40%;
 }
 
+#submission-form p {
+    padding-top: 15px;
+}
+
 .btn-block {
     width: 100%;
 }
 
 .input-group{
     padding-bottom: 20px;
-}
-
-.form-floating {
-    padding-bottom: 15px;
 }
 
 .col-12 {
