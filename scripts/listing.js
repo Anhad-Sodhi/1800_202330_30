@@ -1,7 +1,3 @@
-function redirectEmail() {
-    window.location.href = "mailto:" + document.getElementById("email");
-}
-
 // Create listings and populate them for each document in firebase
 var count = 1;
 
@@ -11,6 +7,7 @@ snapshot.forEach(doc => {
     // Create listing
     var listing = document.createElement("div");
     listing.setAttribute("class", "list");
+    listing.setAttribute("id", "listing" + count);
     var productName = document.createElement("p");
     productName.setAttribute("class", "prodName");
     productName.setAttribute("id", "productName" + count);
@@ -31,12 +28,14 @@ snapshot.forEach(doc => {
 
     document.getElementById("listings").appendChild(listing);
 
-    
+    let image1 = doc.data().image;
+
     // Update info on listing
     document.getElementById("productName" + count).innerHTML = doc.data().foodName;      
     document.getElementById("userName" + count).innerHTML = doc.data().user;
     document.getElementById("information" + count).innerHTML = doc.data().foodDescription;      
-    document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;      
+    document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;
+    document.getElementById("listing" + count).style.backgroundImage = image1;     
 
     count++;
     console.log(count);

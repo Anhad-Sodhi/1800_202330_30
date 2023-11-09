@@ -176,10 +176,12 @@
     padding-top: 10%;
 }
 
+.navbar {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
-
-
-
-.navbar, .footer, .d-flex {
+.footer, .d-flex {
     margin: 10px;
 }
