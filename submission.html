@@ -55,23 +55,18 @@
     <!-- form -->
     <div id="submission-form">
       <input id="ProductName" class="form-control" type="text" placeholder="Product name" aria-label="default input example">
-      <p>Upload images of your food</p>
       <div class="mb-3">
-        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+        <label for="food-photo" class="form-label" id="file-label">Upload images of your food</label>
         <input class="form-control" type="file" id="food-photo" multiple>
       </div>
-      <!-- <div class="input-group">
-        <input type="file" class="form-control" id="food-photo">
-        <label class="input-group-text" for="inputGroupFile02">Upload</label>
-      </div> -->
-      <div class="form-floating">
+      <div class="form-floating" id="food-select">
         <select class="form-select" id="food-type" aria-label="Floating label">
           <option selected>Select</option>
           <option value="fruit">Fruit</option>
           <option value="vegetable">Vegetable</option>
           <option value="other">Other</option>
         </select>
-        <label for="floatingSelect">What type of food are you selling</label>
+        <label for="food-type" class="form-label" id="file-label">What type of food are you selling</label>
       </div>
       <p>Enter price of your food</p>    
       <div class="input-group mb-3">
@@ -97,10 +92,9 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
+    <script src="./scripts/firebaseAPI_TEAMBBY30.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/firebaseAPI_TEAMBBY30.js"></script>
     <script src="./scripts/subdata.js"></script>
-    <script src="./scripts/authentication.js"></script>
   </body>
 </html>
