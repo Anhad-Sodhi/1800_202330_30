@@ -168,6 +168,12 @@
     padding-bottom: 20px;
 }
 
-.navbar, .footer, .d-flex {
+.navbar {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.footer, .d-flex {
     margin: 10px;
 }
