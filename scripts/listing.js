@@ -1,7 +1,3 @@
-function redirectEmail() {
-    window.location.href = "mailto:" + document.getElementById("email");
-}
-
 // Create listings and populate them for each document in firebase
 var count = 1;
 
