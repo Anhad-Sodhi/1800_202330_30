@@ -31,6 +31,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Other libraries go here -->
     <link
@@ -55,10 +56,14 @@
     <div id="submission-form">
       <input id="ProductName" class="form-control" type="text" placeholder="Product name" aria-label="default input example" minlength="1" required>
       <p>Upload images of your food</p>
-      <div class="input-group">
+      <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+        <input class="form-control" type="file" id="food-photo" multiple>
+      </div>
+      <!-- <div class="input-group">
         <input type="file" class="form-control" id="food-photo">
         <label class="input-group-text" for="inputGroupFile02">Upload</label>
-      </div>
+      </div> -->
       <div class="form-floating">
         <select class="form-select" id="food-type" aria-label="Floating label">
           <option selected>Select</option>
