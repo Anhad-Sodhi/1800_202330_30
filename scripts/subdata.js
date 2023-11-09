@@ -41,7 +41,7 @@ function savePost() {
         if (user) {
             // User is signed in.
             // Do something for the user here. 
-            db.collection("posts").add({
+            db.collection("listings").add({
                 foodName: prodName.value,
                 foodType: foodType.value,
                 foodPrice: price.value,
@@ -64,7 +64,7 @@ function savePost() {
 
 function uploadPic(postDocID) {
     console.log("inside uploadPic " + postDocID);
-    const storageRef = storage.ref("images" + postDocID + ".jpg");
+    const storageRef = storage.ref("images/" + postDocID + ".jpg");
 
     storageRef.put(ImageFile)   //global variable ImageFile
        
@@ -80,7 +80,7 @@ function uploadPic(postDocID) {
                     // Now that the image is on Storage, we can go back to the
                     // post document, and update it with an "image" field
                     // that contains the url of where the picture is stored.
-                    db.collection("posts").doc(postDocID).update({
+                    db.collection("listings").doc(postDocID).update({
                             "image": url // Save the URL into users collection
                         })
                          // AFTER .update is done
@@ -118,18 +118,3 @@ function savePostIDforUser(postDocID) {
            });
     })
 }
-
-// submit.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     db.collection('listings').doc().set({
-//         // photo: photo.value,
-//         foodName: prodName.value,
-//         foodType: foodType.value,
-//         foodPrice: price.value,
-//         foodDescription: description.value,
-//         address: address.value,
-//         user: userName,
-//     }).then(() => {
-//         submissionForm.reset();      
-//     })
-// });
