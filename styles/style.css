@@ -183,12 +183,20 @@
     margin: 10px;
 }
 
-#footerButton {
+.footerButton {
     width: 45px;
     height: 45px;
     border-radius: 50%;
 }
 
-#footerButton p {
+.footerButton p {
     margin: auto;
+}
+
+#footerSubmission {
+    float: right;
+}
+
+#footerBack {
+    float: left;
 }
