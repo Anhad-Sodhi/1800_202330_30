@@ -169,11 +169,7 @@
 }
 
 #file-label {
-    padding-top: 10%;
-}
-
-#food-select {
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .navbar {
@@ -182,6 +178,7 @@
     margin-right: 10px;
 }
 
+/* footer styling */
 .footer, .d-flex {
     margin: 10px;
 }
