@@ -18,6 +18,6 @@ function loadSkeleton() {
 
 loadSkeleton(); //invoke the function
 
-function footerRedirect() {
+function footerSubmission() {
     window.location.href = "./submission.html";
 }
