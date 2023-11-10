@@ -185,3 +185,13 @@
 .footer, .d-flex {
     margin: 10px;
 }
+
+#footerButton {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+#footerButton p {
+    margin: auto;
+}
