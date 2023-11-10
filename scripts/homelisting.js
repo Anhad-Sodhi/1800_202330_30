@@ -48,22 +48,23 @@ snapshot.forEach(doc => {
         for (let i = 0; i < postinglist.length; i++) {
             let currentPost = postinglist[i];
             // Create listing
-            if (doc.id == currentPost) {
+            if (doc.id == currentPost) 
+            {
                 var listing = document.createElement("div");
                 listing.setAttribute("class", "list");
-                listing.setAttribute("id", "listing" + count);
+                listing.setAttribute("id", "listing" + i);
                 var productName = document.createElement("p");
                 productName.setAttribute("class", "prodName");
-                productName.setAttribute("id", "productName" + count);
+                productName.setAttribute("id", "productName" + i);
                 var userName = document.createElement("p");
                 userName.setAttribute("class", "userName");
-                userName.setAttribute("id", "userName" + count);
+                userName.setAttribute("id", "userName" + i);
                 var price = document.createElement("p");
                 price.setAttribute("class", "price");
-                price.setAttribute("id", "price" + count);
+                price.setAttribute("id", "price" + i);
                 var information = document.createElement("p");
                 information.setAttribute("class", "info");
-                information.setAttribute("id", "information" + count);
+                information.setAttribute("id", "information" + i);
 
                 listing.appendChild(productName);
                 listing.appendChild(userName);
@@ -75,13 +76,13 @@ snapshot.forEach(doc => {
                 let image1 = doc.data().image;
 
                 // Update info on listing
-                document.getElementById("productName" + count).innerHTML = doc.data().foodName;
-                document.getElementById("userName" + count).innerHTML = doc.data().user;
-                document.getElementById("information" + count).innerHTML = doc.data().foodDescription;
-                document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;
-                document.getElementById("listing" + count).style.backgroundImage = image1;
+                document.getElementById("productName" + i).innerHTML = doc.data().foodName;
+                document.getElementById("userName" + i).innerHTML = doc.data().user;
+                document.getElementById("information" + i).innerHTML = doc.data().foodDescription;
+                document.getElementById("price" + i).innerHTML = "$" + doc.data().foodPrice;
+                document.getElementById("listing" + i).style.backgroundImage = image1;
 
-
+                console.log();
             }
         };
     });
