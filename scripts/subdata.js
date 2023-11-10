@@ -17,7 +17,7 @@ function getNameFromAuth() {
             userName = user.displayName;
 
             //insert with JS
-            document.getElementById("name-goes-here").innerText = userName;    
+            // document.getElementById("name-goes-here").innerText = userName;    
 
         } else {
             // No user is signed in.

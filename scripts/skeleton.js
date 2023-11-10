@@ -17,3 +17,7 @@ function loadSkeleton() {
 }
 
 loadSkeleton(); //invoke the function
+
+function footerRedirect() {
+    window.location.href = "./submission.html";
+}

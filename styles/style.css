@@ -149,7 +149,7 @@
     height: 100vh;
     width: 100vw;
     padding: 10px;
-    margin-top: 40%;
+    margin-top: 25%;
 }
 
 #submission-form p {
@@ -168,12 +168,27 @@
     padding-bottom: 20px;
 }
 
+#file-label {
+    padding-top: 5%;
+}
+
 .navbar {
     margin-top: 0px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
+/* footer styling */
 .footer, .d-flex {
     margin: 10px;
+}
+
+#footerButton {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+#footerButton p {
+    margin: auto;
 }
