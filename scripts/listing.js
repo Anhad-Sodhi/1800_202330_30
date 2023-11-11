@@ -8,6 +8,10 @@ snapshot.forEach(doc => {
     var listing = document.createElement("div");
     listing.setAttribute("class", "list");
     listing.setAttribute("id", "listing" + count);
+    listing.onclick= function link() {
+        window.location = "listing.html?var1=" + doc.id;
+    }
+
     var productName = document.createElement("p");
     productName.setAttribute("class", "prodName");
     productName.setAttribute("id", "productName" + count);
@@ -40,4 +44,5 @@ snapshot.forEach(doc => {
 
     count++;
     console.log(count);
+    console.log(doc.id)
 });
