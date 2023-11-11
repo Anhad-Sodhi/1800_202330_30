@@ -53,7 +53,8 @@ function savePost() {
                 address: address.value,
                 user: userName,
                 last_updated: firebase.firestore.FieldValue
-                    .serverTimestamp() //current system time
+                    .serverTimestamp(), //current system time
+                email: user.email
             }).then(doc => {
                 console.log("1. Post document added!");
                 console.log(doc.id);
