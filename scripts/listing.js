@@ -30,12 +30,13 @@ snapshot.forEach(doc => {
 
     let image1 = doc.data().image;
 
+
     // Update info on listing
     document.getElementById("productName" + count).innerHTML = doc.data().foodName;      
     document.getElementById("userName" + count).innerHTML = doc.data().user;
     document.getElementById("information" + count).innerHTML = doc.data().foodDescription;      
     document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;
-    document.getElementById("listing" + count).style.backgroundImage = image1;     
+    document.getElementById("listing" + count).style.backgroundImage = "url(" + image1 + ")";     
 
     count++;
     console.log(count);

@@ -36,7 +36,7 @@ snapshot.forEach(doc => {
         document.getElementById("userName" + count).innerHTML = doc.data().user;
         document.getElementById("information" + count).innerHTML = doc.data().foodDescription;
         document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;
-        document.getElementById("listing" + count).style.backgroundImage = image1;
+        document.getElementById("listing" + count).style.backgroundImage = "url(" + image1 + ")";
 
 
 
@@ -80,7 +80,7 @@ snapshot.forEach(doc => {
                 document.getElementById("userName" + i).innerHTML = doc.data().user;
                 document.getElementById("information" + i).innerHTML = doc.data().foodDescription;
                 document.getElementById("price" + i).innerHTML = "$" + doc.data().foodPrice;
-                document.getElementById("listing" + i).style.backgroundImage = image1;
+                document.getElementById("listing" + i).style.backgroundImage = "url(" + image1 + ")";
 
                 console.log();
             }
