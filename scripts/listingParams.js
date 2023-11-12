@@ -24,10 +24,16 @@ db.collection("listings").doc(query).get().then(doc => {
             copy.setAttribute("id", "copyButton");
             var image = document.createElement("img");
             image.setAttribute("id", "productImage");
+            var email = document.createElement("a");
+            email.setAttribute("id", "email");
+            email.setAttribute("href", "#")
+
+        // <a id="email" href="#">johnsmith@email.com</a>
 
 
             document.getElementById("description").appendChild(productName);
             document.getElementById("description").appendChild(userName);
+            document.getElementById("description").appendChild(email);
             document.getElementById("description").appendChild(copy);
             document.getElementById("description").appendChild(price);
 
@@ -47,6 +53,8 @@ db.collection("listings").doc(query).get().then(doc => {
             document.getElementById("price").innerHTML = "$" + doc.data().foodPrice;
             document.getElementById("copyButton").innerHTML = "content_copy";
             document.getElementById("productImage").src = image1;
+            document.getElementById("email").innerHTML = doc.data().email;
+
 
             console.log();
           
