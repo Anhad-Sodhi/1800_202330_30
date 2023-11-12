@@ -7,6 +7,9 @@ const address = document.querySelector("#address");
 const submit = document.querySelector("#submit-button");
 const prodName = document.querySelector("#ProductName");
 
+
+// All the code below is from techtips chanel B01a
+
 function getNameFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -41,6 +44,10 @@ listenFileSelect();
 
 function savePost() {
     alert ("SAVE POST is triggered");
+    navigator.geolocation.getCurrentPosition(position => {
+    var userLocation = [position.coords.longitude, position.coords.latitude];
+    console.log(userLocation);
+    });
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
@@ -52,7 +59,10 @@ function savePost() {
                 foodDescription: description.value,
                 address: address.value,
                 user: userName,
-                last_updated: firebase.firestore.FieldValue
+                last_updated: firebase.firestore.FieldValue,
+                location: userLocation
+                // lat: position.coords.latitude,
+                // lng: position.coords.longitude
                     .serverTimestamp(), //current system time
                 email: user.email
             }).then(doc => {
