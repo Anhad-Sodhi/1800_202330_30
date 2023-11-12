@@ -10,7 +10,7 @@ function sortByMoney() {
     
     document.getElementById('listings').innerHTML = "";
     for (let i = 0; i < sortedList.length; i++) {
-        document.getElementById('listings').innerHTML += sortedList[i].innerHTML;
+        document.getElementById('listings').appendChild(sortedList[i]);
     }
 }
 
