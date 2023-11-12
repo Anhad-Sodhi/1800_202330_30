@@ -1,7 +1,6 @@
 let allListings = document.getElementsByClassName('list');
 
 function sortByMoney() {
-
     // sort listings by lowest price
     let sortedList = Array.from(allListings).sort(function(a, b) {
         a = a.getElementsByClassName('price')[0];
@@ -28,5 +27,27 @@ function sortByMoney() {
 }
 
 function sortByDate() {
+    // sort listings by lowest price
+    let sortedList = Array.from(allListings).sort(function(a, b) {
 
+        // get the id for each sort item (DOES NOT WORK)
+        let aID = a.id;
+        let bID = b.id
+        console.log(aID, bID);
+        
+        // get a timestamp for each sort item
+        let aTime = db.collection('listings').document(aID).last_updated;
+        let bTime = db.collection('listings').document(bID).last_updated;
+        console.log(aTime, bTime);
+
+        // compare each one
+        return aTime - bTime;
+    })
+    console.log(sortedList);
+    
+    // clear listings on page and add listings in new sorted order
+    document.getElementById('listings').innerHTML = "";
+    for (let i = 0; i < sortedList.length; i++) {
+        document.getElementById('listings').appendChild(sortedList[i]);
+    }
 }
