@@ -55,6 +55,13 @@
         </form>
     </div>
 
+    <!-- dropdown for sorting, make it look good -->
+    <form>
+        <button type="button" class="footerButton material-symbols-outlined" id="sortPrice" onclick="sortByMoney()">attach_money</button>
+        <button type="button" class="footerButton material-symbols-outlined" id="sortLocation" onclick="sortByDate()">calendar_month</button>
+    </form>
+
+
     <!-- listings from database to view
     (includes image, product description) -->
     <div id="listings">
@@ -73,6 +80,7 @@
     <script src="./scripts/script.js"></script>
     <script type="module" src="./scripts/listing.js"></script>
     <script src="./scripts/search.js"></script>
+    <script src="./scripts/sorting.js"></script>
 </body>
 
 </html>
