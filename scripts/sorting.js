@@ -26,28 +26,36 @@ function sortByMoney() {
     }
 }
 
-function sortByDate() {
+async function sortByDate() {
+    
     // sort listings by lowest price
-    let sortedList = Array.from(allListings).sort(function(a, b) {
-
+        var sortedList2 = await Promise.all(Array.from(allListings).sort(async function(a, b) {
         // get the id for each sort item (DOES NOT WORK)
         let aID = a.id;
         let bID = b.id
-        console.log(aID, bID);
+        // console.log(aID, bID);
         
+        let aTime = await db.collection("listings").doc(aID).get().then(doc => {
+            return doc.data().last_updated;
+        })
         // get a timestamp for each sort item
-        let aTime = db.collection('listings').document(aID).last_updated;
-        let bTime = db.collection('listings').document(bID).last_updated;
-        console.log(aTime, bTime);
-
-        // compare each one
-        return aTime - bTime;
-    })
-    console.log(sortedList);
+        let bTime = await db.collection("listings").doc(bID).get().then(doc => {
+            return doc.data().last_updated;
+        });
+        console.log(aTime);
+        console.log(aTime._compareTo(bTime));
+        var sort = await bTime._compareTo(aTime);
+        return sort;
+    })).then(() => {
     
-    // clear listings on page and add listings in new sorted order
+    for (let i = 0; i < sortedList2.length; i++) {
+        document.getElementById('listings').appendChild(sortedList2[i]);
+    }});
+    console.log(sortedList2);
     document.getElementById('listings').innerHTML = "";
-    for (let i = 0; i < sortedList.length; i++) {
-        document.getElementById('listings').appendChild(sortedList[i]);
-    }
+    
+
+    // clear listings on page and add listings in new sorted order
+    
+
 }

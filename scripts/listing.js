@@ -7,7 +7,7 @@ snapshot.forEach(doc => {
     // Create listing
     var listing = document.createElement("div");
     listing.setAttribute("class", "list");
-    listing.setAttribute("id", "listing" + count);
+    listing.setAttribute("id", "" + doc.id);
     listing.onclick= function link() {
         window.location = "listing.html?var1=" + doc.id;
     }
@@ -40,7 +40,7 @@ snapshot.forEach(doc => {
     document.getElementById("userName" + count).innerHTML = doc.data().user;
     document.getElementById("information" + count).innerHTML = doc.data().foodDescription;      
     document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;
-    document.getElementById("listing" + count).style.backgroundImage = "url(" + image1 + ")";     
+    document.getElementById("" + doc.id).style.backgroundImage = "url(" + image1 + ")";     
 
     count++;
     console.log(count);
