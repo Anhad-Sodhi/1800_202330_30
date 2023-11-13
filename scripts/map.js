@@ -1,3 +1,5 @@
+//All code in here is from techtips M1
+
 function showMap() {
     // Defines basic mapbox data
     mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuZDUiLCJhIjoiY2xvZnkyZHcxMHA4bjJsbzl2bXl2cXNpeSJ9.NkYxQSRO1UmyP1G_xk5D1g';
@@ -5,7 +7,7 @@ function showMap() {
       container: 'map', // Container ID
       style: 'mapbox://styles/dand5/clofy6cum004j01qg3xph52ua', // Styling URL
       center: [-123.002081, 49.249247], // Starting position
-      zoom: 15 // Starting zoom
+      zoom: 9 // Starting zoom
     });
   
     // Adds map features
@@ -20,7 +22,7 @@ function showMap() {
           map.addImage('eventpin', image); // Pin Icon
   
           // READING information from "events" collection in Firestore
-          db.collection('').get().then(allEvents => {
+          db.collection('listings').get().then(allEvents => {
             const features = []; // Defines an empty array for information to be added to
   
             allEvents.forEach(doc => {
