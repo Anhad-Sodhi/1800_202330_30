@@ -22,6 +22,7 @@ db.collection("listings").doc(query).get().then(doc => {
     var copy = document.createElement("p");
     copy.setAttribute("class", "material-symbols-outlined")
     copy.setAttribute("id", "copyButton");
+    copy.setAttribute("style", "cursor: pointer")
     var image = document.createElement("img");
     image.setAttribute("id", "productImage");
     var email = document.createElement("a");
@@ -68,5 +69,6 @@ db.collection("listings").doc(query).get().then(doc => {
         function () {
             let text = document.getElementById("email").innerText;
             navigator.clipboard.writeText(text);
+            document.getElementById("copyButton").innerText = "done";
         });
 });
