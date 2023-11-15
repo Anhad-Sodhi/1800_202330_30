@@ -2,7 +2,7 @@
 
 ## 1. Project Description
 State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
+Our team BBY30 is developing Almost Fresh™ to help people with excess food share that food with others so it does not go to waste by posting excess or imperfect food and produce [aimed towards farmers and regular people, unlike Too Good To Go™].
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
@@ -15,7 +15,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * HTML, CSS, JavaScript
 * Bootstrap 5.0 (Frontend library)
 * Firebase 8.0 (BAAS - Backend as a Service)
-* ...
+* W3Schools for miscellaneous HTML, CSS and JavaScript information (https://www.w3schools.com/)
 
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
