@@ -15,6 +15,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * HTML, CSS, JavaScript
 * Bootstrap 5.0 (Frontend library)
 * Firebase 8.0 (BAAS - Backend as a Service)
+* Logo.com to generate a logo image for the navbar (https://app.logo.com/)
 * W3Schools for miscellaneous HTML, CSS and JavaScript information (https://www.w3schools.com/)
 
 ## 4. Complete setup/installion/usage
