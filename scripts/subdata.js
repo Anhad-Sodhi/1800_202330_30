@@ -44,10 +44,10 @@ listenFileSelect();
 
 function savePost() {
     alert ("SAVE POST is triggered");
-    navigator.geolocation.getCurrentPosition(position => {
-    var userLocation = [position.coords.longitude, position.coords.latitude];
-    console.log(userLocation);
-    });
+    // navigator.geolocation.getCurrentPosition(position => {
+    // const userLocation = [position.coords.longitude, position.coords.latitude];
+    // console.log(userLocation);
+    // });
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
