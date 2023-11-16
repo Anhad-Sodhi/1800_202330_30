@@ -45,7 +45,7 @@ function showMap() {
                   type: "Feature",
                   properties: {
                     id: doc.id,
-                    description: `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/listing.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`,
+                    description: `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/listing.html?id=var1" target="_blank" title="Opens in a new window">Read more</a>`,
                   },
                   geometry: {
                     type: "Point",
@@ -83,7 +83,7 @@ function showMap() {
                 // const description = e.features[0].properties.description;
                 const id = e.features[0].properties.id;
 
-                window.location.href = './listing.html?docID=' + id;
+                window.location.href = './listing.html?var1=' + id;
 
                 // Ensure that if the map is zoomed out such that multiple copies of the feature are visible, the popup appears over the copy being pointed to.
                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
