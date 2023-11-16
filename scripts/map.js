@@ -92,7 +92,7 @@ function showMap() {
 
                 new mapboxgl.Popup()
                   .setLngLat(coordinates)
-                  .setHTML(description)
+                  .setHTML(foodDescription)
                   .addTo(map);
               });
 
