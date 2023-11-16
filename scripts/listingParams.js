@@ -4,41 +4,39 @@ function doAll() {
 
     console.log(query);
 
-    var uid = getCurrentUser();
-    var userMadeIt = getUserMadeThisPost(uid);
+    var userMadeIt = false;
 
-    processListing(userMadeIt);
+    firebase.auth().onAuthStateChanged((user) => {
+        console.log(user.uid);
+
+        getUserMadeThisPost(user.uid, query);
+        console.log(userMadeIt);
+
+        processListing(userMadeIt, query);
+    });
 }
 doAll();
 
-function getCurrentUser() {
-    firebase.auth().onAuthStateChanged((user) => {
-        console.log(user.uid);
-        return user.uid;
-    });
-}
+function getUserMadeThisPost(userid, docid) {
 
-function getUserMadeThisPost(userid) {
-    console.log(userid);
     db.collection("users").doc(userid).get().then(userDoc => {
-        console.log(userDoc.data());
-        let userListings = userDoc.data().myposts;
-        console.log(userListings);
 
-        let didTheyMakeIt = false;
+        let userListings = userDoc.data().myposts;
+
         for (let i = 0; i < userListings.length; i++) {
-            if (userListings[i] == query) {
-                didTheyMakeIt = true;
+            if (userListings[i] == docid) {
+                console.log("Match identified");
+                userMadeIt = true;
+                console.log("Variable changed successfully");
             }
         }
-        return didTheyMakeIt;
     })
 }
 
-function processListing(userMadeThisPost) {
+function processListing(userMadeThisPost, docid) {
     // Create listings and populate them for each document in firebase
     // If the user made the listing, turn it into an input field instead of a p
-    db.collection("listings").doc(query).get().then(doc => {
+    db.collection("listings").doc(docid).get().then(doc => {
         //Product name
         if (userMadeThisPost) {
             var productName = document.createElement("input");
