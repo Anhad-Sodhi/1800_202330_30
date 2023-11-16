@@ -1,7 +1,15 @@
-var query = window.location.search;
-query = query.replace("?var1=", "")
+function doAll() {
+    var query = window.location.search;
+    query = query.replace("?var1=", "")
 
-console.log(query);
+    console.log(query);
+
+    var uid = getCurrentUser();
+    var userMadeIt = getUserMadeThisPost(uid);
+
+    processListing(userMadeIt);
+}
+doAll();
 
 function getCurrentUser() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -11,7 +19,9 @@ function getCurrentUser() {
 }
 
 function getUserMadeThisPost(userid) {
+    console.log(userid);
     db.collection("users").doc(userid).get().then(userDoc => {
+        console.log(userDoc.data());
         let userListings = userDoc.data().myposts;
         console.log(userListings);
 
@@ -138,8 +148,3 @@ function processListing(userMadeThisPost) {
             });
     });
 }
-
-var uid = getCurrentUser();
-var userMadeIt = getUserMadeThisPost(uid);
-
-processListing(userMadeIt);
