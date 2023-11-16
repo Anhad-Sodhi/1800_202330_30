@@ -3,18 +3,29 @@ query = query.replace("?var1=", "")
 
 console.log(query);
 
-var userMadeThisPost = false;
-var uid = firebase.auth().currentUser.uid;
-console.log(uid);
-db.collection("users").doc(uid).get().then(doc => {
-    let userListings = doc.data().myposts;
-    for (let i = 0; i < userListings.length; i++) {
-        if (userListings[i] == query) {
-            userMadeThisPost = true;
-        }
-    }
-    console.log("usermadethispost = " + userMadeThisPost);
+function getCurrentUser() {
+    firebase.auth().onAuthStateChanged((user) => {
+        console.log(user.uid);
+        return user.uid;
+    });
+}
 
+function getUserMadeThisPost(userid) {
+    db.collection("users").doc(userid).get().then(userDoc => {
+        let userListings = userDoc.data().myposts;
+        console.log(userListings);
+
+        let didTheyMakeIt = false;
+        for (let i = 0; i < userListings.length; i++) {
+            if (userListings[i] == query) {
+                didTheyMakeIt = true;
+            }
+        }
+        return didTheyMakeIt;
+    })
+}
+
+function processListing(userMadeThisPost) {
     // Create listings and populate them for each document in firebase
     // If the user made the listing, turn it into an input field instead of a p
     db.collection("listings").doc(query).get().then(doc => {
@@ -126,4 +137,9 @@ db.collection("users").doc(uid).get().then(doc => {
                 document.getElementById("copyButton").innerText = "done";
             });
     });
-})
+}
+
+var uid = getCurrentUser();
+var userMadeIt = getUserMadeThisPost(uid);
+
+processListing(userMadeIt);
