@@ -35,8 +35,8 @@ function showMap() {
                 coordinates = [lng, lat];
                 console.log(coordinates);
                 // Coordinates
-                event_name = doc.data().name; // Event Name
-                preview = doc.data().details; // Text Preview
+                event_name = doc.data().foodName; // Event Name
+                preview = doc.data().foodDescription; // Text Preview
                 // img = doc.data().posterurl; // Image
                 // url = doc.data().link; // URL
 
@@ -44,7 +44,8 @@ function showMap() {
                 features.push({
                   type: "Feature",
                   properties: {
-                    description: `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`,
+                    id: doc.id,
+                    description: `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/listing.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`,
                   },
                   geometry: {
                     type: "Point",
@@ -78,8 +79,11 @@ function showMap() {
               // Map On Click function that creates a popup, displaying previously defined information from "events" collection in Firestore
               map.on("click", "places", (e) => {
                 // Copy coordinates array.
-                const coordinates = e.features[0].geometry.coordinates.slice();
-                const description = e.features[0].properties.description;
+                // const coordinates = e.features[0].geometry.coordinates.slice();
+                // const description = e.features[0].properties.description;
+                const id = e.features[0].properties.id;
+
+                window.location.href = './listing.html?docID=' + id;
 
                 // Ensure that if the map is zoomed out such that multiple copies of the feature are visible, the popup appears over the copy being pointed to.
                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
@@ -182,6 +186,7 @@ function showMap() {
     );
   });
 }
+
 
 // Call the function to display the map with the user's location and event pins
 showMap();
