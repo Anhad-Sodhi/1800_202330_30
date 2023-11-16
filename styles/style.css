@@ -6,11 +6,13 @@
     float: right;
     margin-left: 5px;
     width: 100px;
+    display: none;
 }
 #imageBackward {
     float: left;
     margin-right: 5px;
     width: 100px;
+    display: none;
 }
 #imageBackward:hover, #imageForward:hover {
     opacity: 50%;
