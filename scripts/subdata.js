@@ -46,15 +46,16 @@ function savePost() {
       // User is signed in.
       // Do something for the user here.
       db.collection("listings")
-        .add({
+        .add(
+          {
           foodName: prodName.value,
           foodType: foodType.value,
           foodPrice: price.value,
           foodDescription: description.value,
           address: address.value,
           user: userName,
-          last_updated: firebase.firestore.FieldValue.serverTimestamp(), //current system time
-          email: user.email
+          email: user.email,
+          last_updated: firebase.firestore.FieldValue.serverTimestamp() //current system time
         })
         .then((doc) => {
           console.log("1. Post document added!");
@@ -133,25 +134,25 @@ function savePostIDforUser(postDocID) {
 }
 
 // Disabling submission button if invalid input fields
-(() => {
-  "use strict";
+// (() => {
+//   "use strict";
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll(".needs-validation");
+//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//   const forms = document.querySelectorAll(".needs-validation");
 
-  // Loop over them and prevent submission
-  Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      "submit",
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+//   // Loop over them and prevent submission
+//   Array.from(forms).forEach((form) => {
+//     form.addEventListener(
+//       "submit",
+//       (event) => {
+//         if (!form.checkValidity()) {
+//           event.preventDefault();
+//           event.stopPropagation();
+//         }
 
-        form.classList.add("was-validated");
-      },
-      false
-    );
-  });
-})();
+//         form.classList.add("was-validated");
+//       },
+//       false
+//     );
+//   });
+// })();
