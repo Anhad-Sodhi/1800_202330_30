@@ -1,4 +1,3 @@
-Firebase.initializeApp();
 //------------------------------------------------
 // Call this function when the "logout" button is clicked
 //-------------------------------------------------
