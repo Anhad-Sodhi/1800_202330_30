@@ -1,5 +1,4 @@
 const submissionForm = document.querySelector("#submission-form");
-// const photo = document.querySelector("#food-photo");
 const foodType = document.querySelector("#food-type");
 const price = document.querySelector("#food-price");
 const description = document.querySelector("#food-description");
