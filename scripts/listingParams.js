@@ -1,4 +1,4 @@
-var userMadeIt = new Boolean(false);
+var userMadeIt = Boolean(false);
 function doAll() {
     var query = window.location.search;
     query = query.replace("?var1=", "")
@@ -37,10 +37,7 @@ function processListing(userMadeThisPost, docid, userid) {
     // If the user made the listing, turn it into an input field instead of a p
     db.collection("listings").doc(docid).get().then(doc => {
         var descField = document.getElementById("description");
-        var openFormGroup = "<div class=\"form-group\"></div>";
-        var closeFormGroup = "</div>";
         //Product name
-        descField.innerHTML += openFormGroup
         if (userMadeThisPost) {
             var productName = document.createElement("input");
             productName.setAttribute("id", "productName");
@@ -62,7 +59,6 @@ function processListing(userMadeThisPost, docid, userid) {
             descField.appendChild(productName);
             document.getElementById("productName").innerHTML = doc.data().foodName;
         }
-        descField.innerHTML += closeFormGroup;
 
         //Username
         var userName = document.createElement("p");
@@ -73,6 +69,7 @@ function processListing(userMadeThisPost, docid, userid) {
         if (userMadeThisPost) {
             var price = document.createElement("input");
             price.setAttribute("id", "price");
+            price.setAttribute("type", "number");
             price.setAttribute("class", "price");
             price.setAttribute("class", "form-control");
             price.setAttribute("placeholder", doc.data().foodPrice);
