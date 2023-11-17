@@ -43,25 +43,31 @@ function savePost() {
   alert("SAVE POST is triggered");
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      // User is signed in.
+      navigator.geolocation.getCurrentPosition(position => {
+        const userLocation = [position.coords.longitude, position.coords.latitude];
+        // User is signed in.
       // Do something for the user here.
       db.collection("listings")
-        .add(
-          {
-          foodName: prodName.value,
-          foodType: foodType.value,
-          foodPrice: price.value,
-          foodDescription: description.value,
-          address: address.value,
-          user: userName,
-          email: user.email,
-          last_updated: firebase.firestore.FieldValue.serverTimestamp() //current system time
-        })
-        .then((doc) => {
-          console.log("1. Post document added!");
-          console.log(doc.id);
-          uploadPic(doc.id);
-        });
+      .add(
+        {
+        foodName: prodName.value,
+        foodType: foodType.value,
+        foodPrice: price.value,
+        foodDescription: description.value,
+        address: address.value,
+        user: userName,
+        email: user.email,
+        lng: position.coords.longitude,
+        lat: position.coords.latitude,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp() //current system time
+      })
+      .then((doc) => {
+        console.log("1. Post document added!");
+        console.log(doc.id);
+        uploadPic(doc.id);
+      });
+      })
+      
     } else {
       // No user is signed in.
       console.log("Error, no user signed in");
@@ -133,26 +139,3 @@ function savePostIDforUser(postDocID) {
   });
 }
 
-// Disabling submission button if invalid input fields
-// (() => {
-//   "use strict";
-
-//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//   const forms = document.querySelectorAll(".needs-validation");
-
-//   // Loop over them and prevent submission
-//   Array.from(forms).forEach((form) => {
-//     form.addEventListener(
-//       "submit",
-//       (event) => {
-//         if (!form.checkValidity()) {
-//           event.preventDefault();
-//           event.stopPropagation();
-//         }
-
-//         form.classList.add("was-validated");
-//       },
-//       false
-//     );
-//   });
-// })();

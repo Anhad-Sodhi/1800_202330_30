@@ -12,6 +12,9 @@ snapshot.forEach(doc => {
         window.location = "listing.html?var1=" + doc.id;
     }
 
+    var backgroundColor = document.createElement("div");
+        backgroundColor.setAttribute("class", "bkgClr");
+
     var productName = document.createElement("p");
     productName.setAttribute("class", "prodName");
     productName.setAttribute("id", "productName" + count);
@@ -25,6 +28,7 @@ snapshot.forEach(doc => {
     information.setAttribute("class", "info");
     information.setAttribute("id", "information" + count);
 
+    listing.appendChild(backgroundColor);
     listing.appendChild(productName);
     listing.appendChild(userName);
     listing.appendChild(price);

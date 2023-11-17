@@ -1,5 +1,5 @@
 var index = 0;
-// var imageList = [img1, img2...];
+var imageList = [img1, img2];
 
 function changeImageForward() {
   index = index + 1;
