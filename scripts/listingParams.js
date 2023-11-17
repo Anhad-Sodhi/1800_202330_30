@@ -211,11 +211,11 @@ function processListing(userMadeThisPost, docid, userid) {
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
-                    // db.collection("listings").doc(docid).delete(); //WORKING
-                    //NOT WORKING below
+                    db.collection("listings").doc(docid).delete(); 
+                    
                     let userListing = db.collection("users").doc(userid)
                     userListing.update({
-                        myposts: arrayRemove(docid)
+                        myposts: firebase.firestore.FieldValue.arrayRemove(docid)
                     });
                     console.log("deletion successful");
                 })
