@@ -1,3 +1,8 @@
+
+const mapLink = document.getElementById("mapAnchor");
+
+
+
 //All code in here is from techtips M1
 
 function showMap() {
@@ -37,6 +42,8 @@ function showMap() {
                 // Coordinates
                 event_name = doc.data().foodName; // Event Name
                 preview = doc.data().foodDescription; // Text Preview
+                idd = doc.id
+                
                 // img = doc.data().posterurl; // Image
                 // url = doc.data().link; // URL
 
@@ -45,7 +52,7 @@ function showMap() {
                   type: "Feature",
                   properties: {
                     id: doc.id,
-                    description: `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/listing.html?id=var1" target="_blank" title="Opens in a new window">Read more</a>`,
+                    description: `<strong>${event_name}</strong><p>${preview}</p> <br> <a id="mapAnchor" href="/listing.html?var1=${idd} " target="_blank" title="Opens in a new window">Read more</a>`,
                   },
                   geometry: {
                     type: "Point",
@@ -79,11 +86,11 @@ function showMap() {
               // Map On Click function that creates a popup, displaying previously defined information from "events" collection in Firestore
               map.on("click", "places", (e) => {
                 // Copy coordinates array.
-                // const coordinates = e.features[0].geometry.coordinates.slice();
-                // const description = e.features[0].properties.description;
+                const coordinates = e.features[0].geometry.coordinates.slice();
+                const description = e.features[0].properties.description;
                 const id = e.features[0].properties.id;
 
-                window.location.href = './listing.html?var1=' + id;
+                // window.location.href = './listing.html?var1=' + id;
 
                 // Ensure that if the map is zoomed out such that multiple copies of the feature are visible, the popup appears over the copy being pointed to.
                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
@@ -92,7 +99,7 @@ function showMap() {
 
                 new mapboxgl.Popup()
                   .setLngLat(coordinates)
-                  .setHTML(foodDescription)
+                  .setHTML(description)
                   .addTo(map);
               });
 
