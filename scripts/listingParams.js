@@ -1,4 +1,4 @@
-var userMadeIt = Boolean(false);
+var userMadeIt = false;
 function doAll() {
     var query = window.location.search;
     query = query.replace("?var1=", "")
@@ -8,29 +8,35 @@ function doAll() {
     firebase.auth().onAuthStateChanged((user) => {
         console.log(user.uid);
 
-        getUserMadeThisPost(user.uid, query, userMadeIt);
+        db.collection("users").doc(user.uid).get().then(userDoc => {
+
+            let userListings = userDoc.data().myposts;
+    
+            for (let i = 0; i < userListings.length; i++) {
+                if (userListings[i] == query) {
+                    console.log("Match identified");
+                    userMadeIt = true;
+                    console.log("Variable changed successfully");
+                }
+                console.log(userMadeIt);
+            }
+            console.log(userMadeIt);
+            processListing(userMadeIt, query, user.uid);
+
+        })
+
+        // userMadeIt = getUserMadeThisPost(user.uid, query, userMadeIt);
         console.log(userMadeIt);
 
-        processListing(userMadeIt, query, user.uid);
+        
     });
 }
 doAll();
 
-function getUserMadeThisPost(userid, docid, didTheyMakeIt) {
+// function getUserMadeThisPost(userid, docid, didTheyMakeIt) {
 
-    db.collection("users").doc(userid).get().then(userDoc => {
-
-        let userListings = userDoc.data().myposts;
-
-        for (let i = 0; i < userListings.length; i++) {
-            if (userListings[i] == docid) {
-                console.log("Match identified");
-                didTheyMakeIt = true;
-                console.log("Variable changed successfully");
-            }
-        }
-    })
-}
+    
+// }
 
 function processListing(userMadeThisPost, docid, userid) {
     // Create listings and populate them for each document in firebase
