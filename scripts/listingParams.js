@@ -70,6 +70,7 @@ function processListing(userMadeThisPost, docid, userid) {
             var price = document.createElement("input");
             price.setAttribute("id", "price");
             price.setAttribute("type", "number");
+            price.setAttribute("min", "0");
             price.setAttribute("class", "price");
             price.setAttribute("class", "form-control");
             price.setAttribute("placeholder", doc.data().foodPrice);
