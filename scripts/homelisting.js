@@ -120,4 +120,4 @@ async function doAll(has) {
     })
 };
 
-doAll(hasListing)
+doAll(hasListing);

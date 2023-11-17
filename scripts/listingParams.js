@@ -128,6 +128,7 @@ function processListing(userMadeThisPost, docid, userid) {
 
 
         descField.appendChild(userName);
+        // descField.innerHTML += "<br>";
         descField.appendChild(email);
         descField.appendChild(copy);
 
@@ -153,7 +154,7 @@ function processListing(userMadeThisPost, docid, userid) {
         }
 
         const desc = descField;
-        desc.insertAdjacentElement("afterend", information);
+        descField.insertAdjacentElement("afterend", information);
         const imgBack = document.getElementById("imageBackward");
         imageBackward.insertAdjacentElement("afterend", image);
 
@@ -177,39 +178,40 @@ function processListing(userMadeThisPost, docid, userid) {
                 navigator.clipboard.writeText(text);
                 document.getElementById("copyButton").innerText = "done";
             });
+        if (userMadeThisPost) {
+            document.getElementById("submitButton").addEventListener("click",
+                function () {
+                    let theListing = db.collection("listings").doc(docid);
 
-        document.getElementById("submitButton").addEventListener("click",
-            function () {
-                let theListing = db.collection("listings").doc(docid);
-
-                if (document.getElementById("productName").value.trim() != "") {
-                    theListing.update({
-                        foodName: document.getElementById("productName").value
-                    })
-                    console.log("submission 1 good");
-                }
-                if (document.getElementById("price").value.trim() != "") {
-                    theListing.update({
-                        foodPrice: document.getElementById("price").value
-                    })
-                    console.log("submission 2 good");
-                }
-                if (document.getElementById("information").value.trim() != "") {
-                    theListing.update({
-                        foodDescription: document.getElementById("information").value
-                    })
-                    console.log("submission 3 good");
-                }
-            });
-        document.getElementById("deleteButton").addEventListener("click",
-            function () {
-                // db.collection("listings").doc(docid).delete(); //WORKING
-                //NOT WORKING below
-                let userListing = db.collection("users").doc(userid)
-                userListing.update({
-                    myposts: arrayRemove(docid)
+                    if (document.getElementById("productName").value.trim() != "") {
+                        theListing.update({
+                            foodName: document.getElementById("productName").value
+                        })
+                        console.log("submission 1 good");
+                    }
+                    if (document.getElementById("price").value.trim() != "") {
+                        theListing.update({
+                            foodPrice: document.getElementById("price").value
+                        })
+                        console.log("submission 2 good");
+                    }
+                    if (document.getElementById("information").value.trim() != "") {
+                        theListing.update({
+                            foodDescription: document.getElementById("information").value
+                        })
+                        console.log("submission 3 good");
+                    }
                 });
-                console.log("deletion successful");
-            });
+            document.getElementById("deleteButton").addEventListener("click",
+                function () {
+                    // db.collection("listings").doc(docid).delete(); //WORKING
+                    //NOT WORKING below
+                    let userListing = db.collection("users").doc(userid)
+                    userListing.update({
+                        myposts: arrayRemove(docid)
+                    });
+                    console.log("deletion successful");
+                })
+        };
     });
 }
