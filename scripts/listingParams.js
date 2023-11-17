@@ -1,23 +1,22 @@
+var userMadeIt = new Boolean(false);
 function doAll() {
     var query = window.location.search;
     query = query.replace("?var1=", "")
 
     console.log(query);
 
-    var userMadeIt = false;
-
     firebase.auth().onAuthStateChanged((user) => {
         console.log(user.uid);
 
-        getUserMadeThisPost(user.uid, query);
+        getUserMadeThisPost(user.uid, query, userMadeIt);
         console.log(userMadeIt);
 
-        processListing(userMadeIt, query);
+        processListing(userMadeIt, query, user.uid);
     });
 }
 doAll();
 
-function getUserMadeThisPost(userid, docid) {
+function getUserMadeThisPost(userid, docid, didTheyMakeIt) {
 
     db.collection("users").doc(userid).get().then(userDoc => {
 
@@ -26,18 +25,22 @@ function getUserMadeThisPost(userid, docid) {
         for (let i = 0; i < userListings.length; i++) {
             if (userListings[i] == docid) {
                 console.log("Match identified");
-                userMadeIt = true;
+                didTheyMakeIt = true;
                 console.log("Variable changed successfully");
             }
         }
     })
 }
 
-function processListing(userMadeThisPost, docid) {
+function processListing(userMadeThisPost, docid, userid) {
     // Create listings and populate them for each document in firebase
     // If the user made the listing, turn it into an input field instead of a p
     db.collection("listings").doc(docid).get().then(doc => {
+        var descField = document.getElementById("description");
+        var openFormGroup = "<div class=\"form-group\"></div>";
+        var closeFormGroup = "</div>";
         //Product name
+        descField.innerHTML += openFormGroup
         if (userMadeThisPost) {
             var productName = document.createElement("input");
             productName.setAttribute("id", "productName");
@@ -45,15 +48,21 @@ function processListing(userMadeThisPost, docid) {
             productName.setAttribute("class", "form-control");
             productName.setAttribute("placeholder", doc.data().foodName);
 
-            document.getElementById("description").appendChild(productName);
+            var productLabel = document.createElement("label");
+            productLabel.setAttribute("for", "productName");
+            productLabel.innerText = "Product Name:"
+
+            descField.appendChild(productLabel);
+            descField.appendChild(productName);
         } else {
             var productName = document.createElement("p");
             productName.setAttribute("class", "prodName");
             productName.setAttribute("id", "productName");
 
-            document.getElementById("description").appendChild(productName);
+            descField.appendChild(productName);
             document.getElementById("productName").innerHTML = doc.data().foodName;
         }
+        descField.innerHTML += closeFormGroup;
 
         //Username
         var userName = document.createElement("p");
@@ -66,15 +75,21 @@ function processListing(userMadeThisPost, docid) {
             price.setAttribute("id", "price");
             price.setAttribute("class", "price");
             price.setAttribute("class", "form-control");
-            price.setAttribute("placeholder", "$" + doc.data().foodPrice);
+            price.setAttribute("placeholder", doc.data().foodPrice);
 
-            document.getElementById("description").appendChild(price);
+            var priceLabel = document.createElement("label");
+            priceLabel.setAttribute("for", "price");
+            priceLabel.innerText = "Price:"
+
+            descField.appendChild(priceLabel);
+            descField.innerHTML += "<span class=\"input-group-text\">$</span>";
+            descField.appendChild(price);
         } else {
             var price = document.createElement("p");
             price.setAttribute("class", "price");
             price.setAttribute("id", "price");
 
-            document.getElementById("description").appendChild(price);
+            descField.appendChild(price);
             document.getElementById("price").innerHTML = "$" + doc.data().foodPrice;
         }
 
@@ -83,16 +98,21 @@ function processListing(userMadeThisPost, docid) {
             var information = document.createElement("input");
             information.setAttribute("id", "information");
             information.setAttribute("class", "info");
-            productName.setAttribute("class", "form-control");
-            price.setAttribute("placeholder", doc.data().foodDescription);
+            information.setAttribute("class", "form-control");
+            information.setAttribute("placeholder", doc.data().foodDescription);
 
-            document.getElementById("description").appendChild(information);
+            var informationLabel = document.createElement("label");
+            informationLabel.setAttribute("for", "information");
+            informationLabel.innerText = "Description:"
+
+            descField.appendChild(informationLabel);
+            descField.appendChild(information);
         } else {
             var information = document.createElement("p");
             information.setAttribute("id", "information");
             information.setAttribute("class", "info");
 
-            document.getElementById("description").appendChild(information);
+            descField.appendChild(information);
             document.getElementById("information").innerHTML = doc.data().foodDescription;
         }
 
@@ -109,18 +129,36 @@ function processListing(userMadeThisPost, docid) {
         email.setAttribute("id", "email");
         email.setAttribute("href", "#")
 
-        // <a id="email" href="#">johnsmith@email.com</a>
+
+        descField.appendChild(userName);
+        descField.appendChild(email);
+        descField.appendChild(copy);
+
+        if (userMadeThisPost) {
+            let submitButton = document.createElement("button");
+            submitButton.setAttribute("type", "button");
+            submitButton.setAttribute("id", "submitButton");
+            submitButton.setAttribute("class", "form-control");
+            submitButton.setAttribute("class", "btn btn-outline-success");
+            submitButton.innerText = "Submit";
+
+            descField.appendChild(submitButton);
 
 
-        document.getElementById("description").appendChild(userName);
-        document.getElementById("description").appendChild(email);
-        document.getElementById("description").appendChild(copy);
+            let deleteButton = document.createElement("button");
+            deleteButton.setAttribute("type", "button");
+            deleteButton.setAttribute("id", "deleteButton");
+            deleteButton.setAttribute("class", "form-control");
+            deleteButton.setAttribute("class", "btn btn-outline-danger");
+            deleteButton.innerText = "Delete";
 
-        const desc = document.getElementById("description");
+            descField.appendChild(deleteButton);
+        }
+
+        const desc = descField;
         desc.insertAdjacentElement("afterend", information);
         const imgBack = document.getElementById("imageBackward");
         imageBackward.insertAdjacentElement("afterend", image);
-
 
 
         let image1 = doc.data().image;
@@ -130,8 +168,6 @@ function processListing(userMadeThisPost, docid) {
         document.getElementById("copyButton").innerHTML = "content_copy";
         document.getElementById("productImage").src = image1;
         document.getElementById("email").innerHTML = doc.data().email;
-
-        console.log();
 
         document.getElementById("email").addEventListener("click",
             function () {
@@ -143,6 +179,40 @@ function processListing(userMadeThisPost, docid) {
                 let text = document.getElementById("email").innerText;
                 navigator.clipboard.writeText(text);
                 document.getElementById("copyButton").innerText = "done";
+            });
+
+        document.getElementById("submitButton").addEventListener("click",
+            function () {
+                let theListing = db.collection("listings").doc(docid);
+
+                if (document.getElementById("productName").value.trim() != "") {
+                    theListing.update({
+                        foodName: document.getElementById("productName").value
+                    })
+                    console.log("submission 1 good");
+                }
+                if (document.getElementById("price").value.trim() != "") {
+                    theListing.update({
+                        foodPrice: document.getElementById("price").value
+                    })
+                    console.log("submission 2 good");
+                }
+                if (document.getElementById("information").value.trim() != "") {
+                    theListing.update({
+                        foodDescription: document.getElementById("information").value
+                    })
+                    console.log("submission 3 good");
+                }
+            });
+        document.getElementById("deleteButton").addEventListener("click",
+            function () {
+                // db.collection("listings").doc(docid).delete(); //WORKING
+                //NOT WORKING below
+                let userListing = db.collection("users").doc(userid)
+                userListing.update({
+                    myposts: arrayRemove(docid)
+                });
+                console.log("deletion successful");
             });
     });
 }
