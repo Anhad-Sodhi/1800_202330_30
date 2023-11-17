@@ -6,6 +6,13 @@ const address = document.querySelector("#address");
 const submit = document.querySelector("#submit-button");
 const prodName = document.querySelector("#ProductName");
 
+function resetForm() {
+  document.getElementById("subForm").reset();
+}
+
+
+
+
 // All the code below is from techtips chanel B01a
 
 function getNameFromAuth() {
@@ -13,8 +20,6 @@ function getNameFromAuth() {
     // Check if a user is signed in:
     if (user) {
       // Do something for the currently logged-in user here:
-      console.log(user.uid); //print the uid in the browser console
-      console.log(user.displayName); //print the user name in the browser console
       userName = user.displayName;
 
       //insert with JS
@@ -65,6 +70,7 @@ function savePost() {
         console.log("1. Post document added!");
         console.log(doc.id);
         uploadPic(doc.id);
+        resetForm();
       });
       })
       
