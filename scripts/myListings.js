@@ -3,7 +3,7 @@ var count = 1;
 var hasListing = new Boolean(false);
 
 async function doAll(has) {
-    const listingsRef = db.collection('listings');
+    const listingsRef = db.collection('listings').orderBy("last_updated", "desc");
     const snapshot = await listingsRef.get();
     snapshot.forEach(doc => {
         db.collection("users").doc(firebase.auth().currentUser.uid).get().then(test => {

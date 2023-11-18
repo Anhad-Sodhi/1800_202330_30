@@ -199,6 +199,9 @@ function processListing(userMadeThisPost, docid, userid) {
                             foodDescription: document.getElementById("information").value
                         })
                     }
+                    theListing.update({
+                        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+                    })
                     alert("update successful");
                 });
             document.getElementById("deleteButton").addEventListener("click",
