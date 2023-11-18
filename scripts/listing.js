@@ -1,7 +1,7 @@
 // Create listings and populate them for each document in firebase
 var count = 1;
 
-const listingsRef = db.collection('listings');
+const listingsRef = db.collection('listings').orderBy("last_updated", "desc");
 const snapshot = await listingsRef.get();
 snapshot.forEach(doc => {
     // Create listing
