@@ -140,8 +140,8 @@ function processListing(userMadeThisPost, docid, userid) {
             let submitButton = document.createElement("button");
             submitButton.setAttribute("type", "button");
             submitButton.setAttribute("id", "submitButton");
-            submitButton.setAttribute("class", "form-control btn btn-outline-success");
-            submitButton.innerText = "Submit";
+            submitButton.setAttribute("class", "form-control btn btn-success");
+            submitButton.innerText = "Update";
 
             descField.appendChild(submitButton);
 
@@ -188,33 +188,29 @@ function processListing(userMadeThisPost, docid, userid) {
                         theListing.update({
                             foodName: document.getElementById("productName").value
                         })
-                        console.log("submission 1 good");
                     }
                     if (document.getElementById("price").value.trim() != "") {
                         theListing.update({
                             foodPrice: document.getElementById("price").value
                         })
-                        console.log("submission 2 good");
                     }
                     if (document.getElementById("information").value.trim() != "") {
                         theListing.update({
                             foodDescription: document.getElementById("information").value
                         })
-                        console.log("submission 3 good");
                     }
-                    history.back();
+                    alert("update successful");
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
-                    if (confirm("Are you sure you want to delete this lsiting? This cannot be undone!")) {
+                    if (confirm("Are you sure you want to delete this listing? This cannot be undone!")) {
                         db.collection("listings").doc(docid).delete();
 
                         let userListing = db.collection("users").doc(userid)
                         userListing.update({
                             myposts: firebase.firestore.FieldValue.arrayRemove(docid)
                         });
-                        console.log("deletion successful");
-                        history.back();
+                        alert("listing deleted");
                     }
                 })
         };
