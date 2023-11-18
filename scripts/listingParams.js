@@ -47,8 +47,7 @@ function processListing(userMadeThisPost, docid, userid) {
         if (userMadeThisPost) {
             var productName = document.createElement("input");
             productName.setAttribute("id", "productName");
-            productName.setAttribute("class", "prodName");
-            productName.setAttribute("class", "form-control");
+            productName.setAttribute("class", "prodName form-control");
             productName.setAttribute("placeholder", doc.data().foodName);
 
             var productLabel = document.createElement("label");
@@ -77,8 +76,7 @@ function processListing(userMadeThisPost, docid, userid) {
             price.setAttribute("id", "price");
             price.setAttribute("type", "number");
             price.setAttribute("min", "0");
-            price.setAttribute("class", "price");
-            price.setAttribute("class", "form-control");
+            price.setAttribute("class", "price form-control");
             price.setAttribute("placeholder", doc.data().foodPrice);
 
             var priceLabel = document.createElement("label");
@@ -101,8 +99,7 @@ function processListing(userMadeThisPost, docid, userid) {
         if (userMadeThisPost) {
             var information = document.createElement("input");
             information.setAttribute("id", "information");
-            information.setAttribute("class", "info");
-            information.setAttribute("class", "form-control");
+            information.setAttribute("class", "info form-control");
             information.setAttribute("placeholder", doc.data().foodDescription);
 
             var informationLabel = document.createElement("label");
@@ -143,8 +140,7 @@ function processListing(userMadeThisPost, docid, userid) {
             let submitButton = document.createElement("button");
             submitButton.setAttribute("type", "button");
             submitButton.setAttribute("id", "submitButton");
-            submitButton.setAttribute("class", "form-control");
-            submitButton.setAttribute("class", "btn btn-outline-success");
+            submitButton.setAttribute("class", "form-control btn btn-outline-success");
             submitButton.innerText = "Submit";
 
             descField.appendChild(submitButton);
@@ -153,17 +149,15 @@ function processListing(userMadeThisPost, docid, userid) {
             let deleteButton = document.createElement("button");
             deleteButton.setAttribute("type", "button");
             deleteButton.setAttribute("id", "deleteButton");
-            deleteButton.setAttribute("class", "form-control");
-            deleteButton.setAttribute("class", "btn btn-outline-danger");
+            deleteButton.setAttribute("class", "form-control btn btn-outline-danger");
             deleteButton.innerText = "Delete";
 
             descField.appendChild(deleteButton);
         }
 
-        const desc = descField;
-        descField.insertAdjacentElement("afterend", information);
+        // descField.insertAdjacentElement("afterend", information);
         const imgBack = document.getElementById("imageBackward");
-        imageBackward.insertAdjacentElement("afterend", image);
+        imgBack.insertAdjacentElement("afterend", image);
 
 
         let image1 = doc.data().image;
