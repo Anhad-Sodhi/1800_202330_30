@@ -11,7 +11,7 @@ function doAll() {
         db.collection("users").doc(user.uid).get().then(userDoc => {
 
             let userListings = userDoc.data().myposts;
-    
+
             for (let i = 0; i < userListings.length; i++) {
                 if (userListings[i] == query) {
                     console.log("Match identified");
@@ -28,14 +28,14 @@ function doAll() {
         // userMadeIt = getUserMadeThisPost(user.uid, query, userMadeIt);
         console.log(userMadeIt);
 
-        
+
     });
 }
 doAll();
 
 // function getUserMadeThisPost(userid, docid, didTheyMakeIt) {
 
-    
+
 // }
 
 function processListing(userMadeThisPost, docid, userid) {
@@ -208,16 +208,20 @@ function processListing(userMadeThisPost, docid, userid) {
                         })
                         console.log("submission 3 good");
                     }
+                    history.back();
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
-                    db.collection("listings").doc(docid).delete(); 
-                    
-                    let userListing = db.collection("users").doc(userid)
-                    userListing.update({
-                        myposts: firebase.firestore.FieldValue.arrayRemove(docid)
-                    });
-                    console.log("deletion successful");
+                    if (confirm("Are you sure you want to delete this lsiting? This cannot be undone!")) {
+                        db.collection("listings").doc(docid).delete();
+
+                        let userListing = db.collection("users").doc(userid)
+                        userListing.update({
+                            myposts: firebase.firestore.FieldValue.arrayRemove(docid)
+                        });
+                        console.log("deletion successful");
+                        history.back();
+                    }
                 })
         };
     });
