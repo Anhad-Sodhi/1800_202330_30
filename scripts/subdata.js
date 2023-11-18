@@ -71,7 +71,6 @@ function savePost() {
         console.log(doc.id);
         uploadPic(doc.id);
         resetForm();
-        history.back();
       });
       })
       
