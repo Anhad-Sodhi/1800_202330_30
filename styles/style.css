@@ -1,6 +1,22 @@
+/* Change mouse on listings */
+.list {
+    cursor: pointer;
+}
+
+/* Style for Home page */
+/* Is this too confusing? (scroll of my listings on home page */
+#yourListings2 {
+    height: 30vh;
+    overflow-y: scroll;
+}
+#brand {
+    margin-top: 20px;
+}
+
 /* Style for listing page  */
 #productImage {
-    width: 70%;   
+    width: 90%;
+    max-height: 60vh;
 }
 #imageForward {
     float: right;
@@ -23,25 +39,44 @@
     justify-content: center;
 }
 #description {
+    text-align: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 #productName{
     margin-left: auto;
     margin-right: auto;
+    width: 33%;
 }
 #userName {
     margin-left: auto;
     margin-right: auto;
+    width: 33%;
 }
 #price {
     margin-left: auto;
     margin-right: auto;
+    width: 33%;
+}
+#email {
+    margin-left: auto;
+    display: inline;
+    order: 5;
+}
+#copyButton {
+    margin-right: auto;
+    order: 6;
 }
 #information {
     text-align: center;
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
+
+/* Style for own listing page */
+.prodNam
 
 
 /* Style for browsing page */
@@ -60,6 +95,7 @@
     border-radius: 5px;
     font-weight: bold;
     overflow: hidden;
+    text-align: center;
 }
 .bkgClr {
     grid-row: 2 / span 2;

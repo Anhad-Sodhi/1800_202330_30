@@ -95,6 +95,26 @@ function processListing(userMadeThisPost, docid, userid) {
             document.getElementById("price").innerHTML = "$" + doc.data().foodPrice;
         }
 
+
+        //Copy
+        var copy = document.createElement("p");
+        copy.setAttribute("class", "material-symbols-outlined")
+        copy.setAttribute("id", "copyButton");
+        copy.setAttribute("style", "cursor: pointer")
+        //Image
+        var image = document.createElement("img");
+        image.setAttribute("id", "productImage");
+        //Email
+        var email = document.createElement("a");
+        email.setAttribute("id", "email");
+        email.setAttribute("href", "#")
+
+
+        descField.appendChild(userName);
+        // descField.innerHTML += "<br>";
+        descField.appendChild(email);
+        descField.appendChild(copy);
+
         //Information/description
         if (userMadeThisPost) {
             var information = document.createElement("input");
@@ -116,25 +136,6 @@ function processListing(userMadeThisPost, docid, userid) {
             descField.appendChild(information);
             document.getElementById("information").innerHTML = doc.data().foodDescription;
         }
-
-        //Copy
-        var copy = document.createElement("p");
-        copy.setAttribute("class", "material-symbols-outlined")
-        copy.setAttribute("id", "copyButton");
-        copy.setAttribute("style", "cursor: pointer")
-        //Image
-        var image = document.createElement("img");
-        image.setAttribute("id", "productImage");
-        //Email
-        var email = document.createElement("a");
-        email.setAttribute("id", "email");
-        email.setAttribute("href", "#")
-
-
-        descField.appendChild(userName);
-        // descField.innerHTML += "<br>";
-        descField.appendChild(email);
-        descField.appendChild(copy);
 
         if (userMadeThisPost) {
             let submitButton = document.createElement("button");
