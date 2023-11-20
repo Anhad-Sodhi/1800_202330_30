@@ -44,9 +44,11 @@ function processListing(userMadeThisPost, docid, userid) {
     db.collection("listings").doc(docid).get().then(doc => {
         var descField = document.getElementById("description");
         
+        //Change id of description field if it's the user's own post, so the CSS changes properly
         if (userMadeThisPost) {
             descField.setAttribute("id", "descriptionForm");
         }
+        
         //Product name
         if (userMadeThisPost) {
             var productName = document.createElement("input");
