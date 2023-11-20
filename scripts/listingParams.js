@@ -90,7 +90,7 @@ function processListing(userMadeThisPost, docid, userid) {
             priceLabel.innerText = "Price:"
 
             descField.appendChild(priceLabel);
-            descField.innerHTML += "<span class=\"input-group-text\">$</span>";
+            descField.innerHTML += "<span id=\"dollarSign\" class=\"input-group-text\">$</span>";
             descField.appendChild(price);
         } else {
             var price = document.createElement("p");

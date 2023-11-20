@@ -75,9 +75,63 @@
     margin-right: 5%;
 }
 
-/* Style for own listing page */
-.prodNam
 
+/* Style for own listing page */
+#descriptionForm {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+label[for=productName] {
+    width: 35%;
+    margin-top: 20px;
+}
+input#productName {
+    width: 60%;
+    margin-top: 17px;
+}
+label[for=price] {
+    width: 40%;
+    margin-top: 20px;
+}
+#dollarSign {
+    /* width: 10% */
+    display: inline;
+    margin-top: 17px;
+}
+input#price {
+    width: 30%;
+    margin-right: 20%;
+    margin-top: 17px;
+}
+label[for=information] {
+    width: 30%;
+    margin-top: 20px;
+}
+input#information {
+    width: 60%;
+    margin-top: 17px;
+}
+#submitButton {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#deleteButton {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#descriptionForm #userName {
+    display: none;
+}
+#descriptionForm #email {
+    display: none;
+}
+#descriptionForm #copyButton {
+    display: none;
+}
 
 /* Style for browsing page */
 .list {
