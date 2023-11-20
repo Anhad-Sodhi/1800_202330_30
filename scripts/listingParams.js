@@ -43,6 +43,10 @@ function processListing(userMadeThisPost, docid, userid) {
     // If the user made the listing, turn it into an input field instead of a p
     db.collection("listings").doc(docid).get().then(doc => {
         var descField = document.getElementById("description");
+        
+        if (userMadeThisPost) {
+            descField.setAttribute("id", "descriptionForm");
+        }
         //Product name
         if (userMadeThisPost) {
             var productName = document.createElement("input");
