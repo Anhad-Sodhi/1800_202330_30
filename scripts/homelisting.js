@@ -1,4 +1,4 @@
-// Create listings and populate them for each document in firebase
+// Variable to count iterations through the loop
 var count = 1;
 
 // This function loads the user's listings and two 'browse' listings onto the page
