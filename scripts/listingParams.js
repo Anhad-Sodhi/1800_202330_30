@@ -57,7 +57,7 @@ function processListing(userMadeThisPost, docid, userid) {
             var productName = document.createElement("input");
             productName.setAttribute("id", "productName");
             productName.setAttribute("class", "prodName form-control");
-            productName.setAttribute("placeholder", doc.data().foodName);
+            productName.setAttribute("value", doc.data().foodName);
 
             // Create a label for the input section
             var productLabel = document.createElement("label");
@@ -98,7 +98,7 @@ function processListing(userMadeThisPost, docid, userid) {
             price.setAttribute("type", "number");
             price.setAttribute("min", "0");
             price.setAttribute("class", "price form-control");
-            price.setAttribute("placeholder", doc.data().foodPrice);
+            price.setAttribute("value", doc.data().foodPrice);
 
             // Create a label for the price
             var priceLabel = document.createElement("label");
@@ -150,7 +150,7 @@ function processListing(userMadeThisPost, docid, userid) {
             var information = document.createElement("input");
             information.setAttribute("id", "information");
             information.setAttribute("class", "info form-control");
-            information.setAttribute("placeholder", doc.data().foodDescription);
+            information.setAttribute("value", doc.data().foodDescription);
 
             var informationLabel = document.createElement("label");
             informationLabel.setAttribute("for", "information");
