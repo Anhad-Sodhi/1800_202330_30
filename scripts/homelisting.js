@@ -127,6 +127,7 @@ async function doAll() {
                         document.getElementById("listing" + i).style.backgroundImage = "url(" + image1 + ")";
                     }
                 }
+            
             // If they don't have listings, print out a message
             } else {
                 var noListings = document.createElement("p");

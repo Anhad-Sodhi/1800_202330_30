@@ -1,47 +1,48 @@
+// Variable to hold whether the post was made by the user or not initialized to false
 var userMadeIt = false;
+
+// Function to update the listing page based on whether it is the user's or not
 function doAll() {
+    
+    // Get the listing document id
     var query = window.location.search;
     query = query.replace("?var1=", "")
 
-    console.log(query);
-
+    // Get the current user
     firebase.auth().onAuthStateChanged((user) => {
-        console.log(user.uid);
 
+        // Get the user's data from firestore
         db.collection("users").doc(user.uid).get().then(userDoc => {
 
+            // Get the user's listings
             let userListings = userDoc.data().myposts;
 
+            // Loop through the user's listings to see if the page is one of theirs
             for (let i = 0; i < userListings.length; i++) {
                 if (userListings[i] == query) {
-                    console.log("Match identified");
+                    
+                    // If it is their listing, update  the boolean to true
                     userMadeIt = true;
-                    console.log("Variable changed successfully");
                 }
-                console.log(userMadeIt);
             }
-            console.log(userMadeIt);
+
+            //use the processListing function to populate the data on the page
             processListing(userMadeIt, query, user.uid);
 
         })
-
-        // userMadeIt = getUserMadeThisPost(user.uid, query, userMadeIt);
-        console.log(userMadeIt);
-
-
     });
 }
+
 doAll();
 
-// function getUserMadeThisPost(userid, docid, didTheyMakeIt) {
-
-
-// }
-
+// This function populates the page based on whether it is the user's listing or not
 function processListing(userMadeThisPost, docid, userid) {
+    
     // Create listings and populate them for each document in firebase
     // If the user made the listing, turn it into an input field instead of a p
     db.collection("listings").doc(docid).get().then(doc => {
+        
+        // A variable to represent the description section of the html
         var descField = document.getElementById("description");
         
         //Change id of description field if it's the user's own post, so the CSS changes properly
@@ -49,35 +50,49 @@ function processListing(userMadeThisPost, docid, userid) {
             descField.setAttribute("id", "descriptionForm");
         }
         
-        //Product name
+        // If it's the user's listing, populate the page with input fields
         if (userMadeThisPost) {
+            
+            // Create an input section for product name
             var productName = document.createElement("input");
             productName.setAttribute("id", "productName");
             productName.setAttribute("class", "prodName form-control");
             productName.setAttribute("placeholder", doc.data().foodName);
 
+            // Create a label for the input section
             var productLabel = document.createElement("label");
             productLabel.setAttribute("for", "productName");
             productLabel.innerText = "Product Name:"
 
+            // Append the input and label to the description section
             descField.appendChild(productLabel);
             descField.appendChild(productName);
-        } else {
+        } 
+        
+        // Otherwise populate with the regular listing information
+        else {
+
+            // Create a paragraph section for product name
             var productName = document.createElement("p");
             productName.setAttribute("class", "prodName");
             productName.setAttribute("id", "productName");
 
+            // Append the product name to the description section
             descField.appendChild(productName);
+
+            // Populate the product name with data from firestore
             document.getElementById("productName").innerHTML = doc.data().foodName;
         }
 
-        //Username
+        // Create a paragraph section for user name
         var userName = document.createElement("p");
         userName.setAttribute("class", "userName");
         userName.setAttribute("id", "userName");
 
-        //Price
+        // If it's the user's listing, populate the page with input fields
         if (userMadeThisPost) {
+            
+            // Create an input section for price
             var price = document.createElement("input");
             price.setAttribute("id", "price");
             price.setAttribute("type", "number");
@@ -85,19 +100,29 @@ function processListing(userMadeThisPost, docid, userid) {
             price.setAttribute("class", "price form-control");
             price.setAttribute("placeholder", doc.data().foodPrice);
 
+            // Create a label for the price
             var priceLabel = document.createElement("label");
             priceLabel.setAttribute("for", "price");
             priceLabel.innerText = "Price:"
 
+            // Append the input, a dollar sign, and the label to the description section
             descField.appendChild(priceLabel);
             descField.innerHTML += "<span id=\"dollarSign\" class=\"input-group-text\">$</span>";
             descField.appendChild(price);
-        } else {
+        } 
+        
+        // Otherwise populate with the regular listing information
+        else {
+
+            // Create a paragraph section for the price
             var price = document.createElement("p");
             price.setAttribute("class", "price");
             price.setAttribute("id", "price");
 
+            // Append the price to the description section
             descField.appendChild(price);
+
+            // Populate the price with a dollar sign and the data from firestore
             document.getElementById("price").innerHTML = "$" + doc.data().foodPrice;
         }
 
@@ -117,11 +142,10 @@ function processListing(userMadeThisPost, docid, userid) {
 
 
         descField.appendChild(userName);
-        // descField.innerHTML += "<br>";
         descField.appendChild(email);
         descField.appendChild(copy);
 
-        //Information/description
+        // If it's the user's listing, populate the page with input fields
         if (userMadeThisPost) {
             var information = document.createElement("input");
             information.setAttribute("id", "information");
@@ -134,7 +158,10 @@ function processListing(userMadeThisPost, docid, userid) {
 
             descField.appendChild(informationLabel);
             descField.appendChild(information);
-        } else {
+        } 
+        
+        // Otherwise populate with the regular listing information
+        else {
             var information = document.createElement("p");
             information.setAttribute("id", "information");
             information.setAttribute("class", "info");
