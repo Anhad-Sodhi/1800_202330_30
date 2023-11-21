@@ -141,6 +141,13 @@ async function doAll() {
         // Increase count after iterating
         count++;
     })
+
+    document.getElementById("yourListingsHeader").addEventListener("click", function() {
+        window.location.href = "./listings.html";
+    })
+    document.getElementById("browseHeader").addEventListener("click", function() {
+        window.location.href = "./browsing.html";
+    })
 };
 
 doAll();
