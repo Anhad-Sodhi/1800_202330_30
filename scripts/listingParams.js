@@ -3,7 +3,7 @@ var userMadeIt = false;
 
 // Function to update the listing page based on whether it is the user's or not
 function doAll() {
-    
+
     // Get the listing document id
     var query = window.location.search;
     query = query.replace("?var1=", "")
@@ -20,7 +20,7 @@ function doAll() {
             // Loop through the user's listings to see if the page is one of theirs
             for (let i = 0; i < userListings.length; i++) {
                 if (userListings[i] == query) {
-                    
+
                     // If it is their listing, update  the boolean to true
                     userMadeIt = true;
                 }
@@ -37,22 +37,22 @@ doAll();
 
 // This function populates the page based on whether it is the user's listing or not
 function processListing(userMadeThisPost, docid, userid) {
-    
+
     // Create listings and populate them for each document in firebase
     // If the user made the listing, turn it into an input field instead of a p
     db.collection("listings").doc(docid).get().then(doc => {
-        
+
         // A variable to represent the description section of the html
         var descField = document.getElementById("description");
-        
+
         //Change id of description field if it's the user's own post, so the CSS changes properly
         if (userMadeThisPost) {
             descField.setAttribute("id", "descriptionForm");
         }
-        
+
         // If it's the user's listing, populate the page with input fields
         if (userMadeThisPost) {
-            
+
             // Create an input section for product name
             var productName = document.createElement("input");
             productName.setAttribute("id", "productName");
@@ -67,8 +67,8 @@ function processListing(userMadeThisPost, docid, userid) {
             // Append the input and label to the description section
             descField.appendChild(productLabel);
             descField.appendChild(productName);
-        } 
-        
+        }
+
         // Otherwise populate with the regular listing information
         else {
 
@@ -91,7 +91,7 @@ function processListing(userMadeThisPost, docid, userid) {
 
         // If it's the user's listing, populate the page with input fields
         if (userMadeThisPost) {
-            
+
             // Create an input section for price
             var price = document.createElement("input");
             price.setAttribute("id", "price");
@@ -109,8 +109,8 @@ function processListing(userMadeThisPost, docid, userid) {
             descField.appendChild(priceLabel);
             descField.innerHTML += "<span id=\"dollarSign\" class=\"input-group-text\">$</span>";
             descField.appendChild(price);
-        } 
-        
+        }
+
         // Otherwise populate with the regular listing information
         else {
 
@@ -158,8 +158,8 @@ function processListing(userMadeThisPost, docid, userid) {
 
             descField.appendChild(informationLabel);
             descField.appendChild(information);
-        } 
-        
+        }
+
         // Otherwise populate with the regular listing information
         else {
             var information = document.createElement("p");
@@ -237,10 +237,10 @@ function processListing(userMadeThisPost, docid, userid) {
                         last_updated: firebase.firestore.FieldValue.serverTimestamp()
                     })
                     alert("update successful");
-                    document.getElementById("productName").value = "";
-                    document.getElementById("price").value = "";
-                    document.getElementById("information").value = "";
-                    window.location.href = "#";
+                    // document.getElementById("productName").value = "";
+                    // document.getElementById("price").value = "";
+                    // document.getElementById("information").value = "";
+                    // window.location.href = "#";
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
@@ -250,9 +250,9 @@ function processListing(userMadeThisPost, docid, userid) {
                         let userListing = db.collection("users").doc(userid)
                         userListing.update({
                             myposts: firebase.firestore.FieldValue.arrayRemove(docid)
-                        });
+                        })
                         alert("listing deleted");
-                        window.location.href = "./listings.html";
+                        // window.location.href = "./listings.html";
                     }
                 })
         };
