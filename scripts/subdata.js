@@ -10,6 +10,11 @@ function resetForm() {
   document.getElementById("subForm").reset();
 }
 
+// modal js
+const modal = document.querySelector("#modal");
+const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
+
 // All the code below is from techtips chanel B01a
 
 function getNameFromAuth() {
@@ -42,13 +47,13 @@ function listenFileSelect() {
 listenFileSelect();
 
 function savePost() {
-  alert("SAVE POST is triggered");
+  closeModal.addEventListener("click", () => {
+    modal.close();
+  });
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       navigator.geolocation.getCurrentPosition(position => {
         const userLocation = [position.coords.longitude, position.coords.latitude];
-        // User is signed in.
-      // Do something for the user here.
       db.collection("listings")
       .add(
         {
@@ -67,7 +72,6 @@ function savePost() {
         console.log("1. Post document added!");
         console.log(doc.id);
         uploadPic(doc.id);
-        resetForm();
       });
       })
       
@@ -133,7 +137,8 @@ function savePostIDforUser(postDocID) {
       })
       .then(() => {
         console.log("5. Saved to user's document!");
-        alert("Post is complete!");
+        resetForm();
+        modal.showModal();
         //window.location.href = "showposts.html";
       })
       .catch((error) => {

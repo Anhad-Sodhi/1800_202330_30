@@ -133,6 +133,29 @@ input#information {
     display: none;
 }
 
+/* modal styling */
+.modal {
+    border-radius: 5%;
+     padding: 1em;
+     width: 75vw;
+     height: 35vh;
+     border: 0;
+     box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  
+    & > * {
+      margin: 0 0 0.5rem 0;
+    }
+  }
+  
+  .modal::backdrop {
+    background: rgb(0 0 0 / 0.4);
+  }
+
+/* .button:hover,
+.button:focus {
+    background: var(--cyan-9);
+} */
+
 /* Style for browsing page */
 .list {
     display: grid;
