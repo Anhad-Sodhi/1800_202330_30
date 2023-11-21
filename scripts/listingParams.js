@@ -248,6 +248,7 @@ function processListing(userMadeThisPost, docid, userid) {
                             myposts: firebase.firestore.FieldValue.arrayRemove(docid)
                         });
                         alert("listing deleted");
+                        window.location.href = "./listings.html"
                     }
                 })
         };
