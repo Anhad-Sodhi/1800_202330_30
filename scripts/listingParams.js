@@ -235,12 +235,10 @@ function processListing(userMadeThisPost, docid, userid) {
                     }
                     theListing.update({
                         last_updated: firebase.firestore.FieldValue.serverTimestamp()
+                    }).then(i => {
+                        alert("update successful");
+                        location.reload();
                     })
-                    alert("update successful");
-                    // document.getElementById("productName").value = "";
-                    // document.getElementById("price").value = "";
-                    // document.getElementById("information").value = "";
-                    // window.location.href = "#";
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
@@ -250,9 +248,10 @@ function processListing(userMadeThisPost, docid, userid) {
                         let userListing = db.collection("users").doc(userid)
                         userListing.update({
                             myposts: firebase.firestore.FieldValue.arrayRemove(docid)
+                        }).then(i => {
+                            alert("listing deleted");
+                            window.location.href = "./listings.html";
                         })
-                        alert("listing deleted");
-                        // window.location.href = "./listings.html";
                     }
                 })
         };
