@@ -136,6 +136,7 @@ async function doAll() {
             }
 
         });
+        
         // Increase count after iterating
         count++;
     })
