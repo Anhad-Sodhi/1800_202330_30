@@ -216,6 +216,8 @@ function processListing(userMadeThisPost, docid, userid) {
         if (userMadeThisPost) {
             document.getElementById("submitButton").addEventListener("click",
                 function () {
+                    document.getElementById("submitButton").innerText = "Loading...";
+
                     let theListing = db.collection("listings").doc(docid);
 
                     if (document.getElementById("productName").value.trim() != "") {
@@ -242,6 +244,8 @@ function processListing(userMadeThisPost, docid, userid) {
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
+                    document.getElementById("deleteButton").innerText = "Loading...";
+
                     if (confirm("Are you sure you want to delete this listing? This cannot be undone!")) {
                         db.collection("listings").doc(docid).delete();
 
