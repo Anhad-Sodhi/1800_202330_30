@@ -156,7 +156,7 @@ function processListing(userMadeThisPost, docid, userid) {
             let deleteButton = document.createElement("button");
             deleteButton.setAttribute("type", "button");
             deleteButton.setAttribute("id", "deleteButton");
-            deleteButton.setAttribute("class", "form-control btn btn-outline-danger");
+            deleteButton.setAttribute("class", "form-control btn btn-danger");
             deleteButton.innerText = "Delete";
 
             descField.appendChild(deleteButton);
