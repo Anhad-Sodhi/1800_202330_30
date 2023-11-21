@@ -10,9 +10,6 @@ function resetForm() {
   document.getElementById("subForm").reset();
 }
 
-
-
-
 // All the code below is from techtips chanel B01a
 
 function getNameFromAuth() {

@@ -17,6 +17,9 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * Firebase 8.0 (BAAS - Backend as a Service)
 * Logo.com to generate a logo image for the navbar (https://app.logo.com/)
 * W3Schools for miscellaneous HTML, CSS and JavaScript information (https://www.w3schools.com/)
+* Mapbox api for the map
+* Techtips B01a for the saving a users post in firebase
+* Techtips M1 for the map displaying users location and having markers for posts
 
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
