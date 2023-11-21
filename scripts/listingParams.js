@@ -237,6 +237,10 @@ function processListing(userMadeThisPost, docid, userid) {
                         last_updated: firebase.firestore.FieldValue.serverTimestamp()
                     })
                     alert("update successful");
+                    document.getElementById("productName").value = "";
+                    document.getElementById("price").value = "";
+                    document.getElementById("information").value = "";
+                    window.location.href = "#";
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
@@ -248,7 +252,7 @@ function processListing(userMadeThisPost, docid, userid) {
                             myposts: firebase.firestore.FieldValue.arrayRemove(docid)
                         });
                         alert("listing deleted");
-                        window.location.href = "./listings.html"
+                        window.location.href = "./listings.html";
                     }
                 })
         };
