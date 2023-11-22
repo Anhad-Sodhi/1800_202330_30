@@ -102,9 +102,6 @@ function uploadPic(postDocID) {
           // Get URL of the uploaded file
           console.log("3. Got the download URL.");
 
-          // Now that the image is on Storage, we can go back to the
-          // post document, and update it with an "image" field
-          // that contains the url of where the picture is stored.
           db.collection("listings")
             .doc(postDocID)
             .update({
@@ -113,9 +110,7 @@ function uploadPic(postDocID) {
             // AFTER .update is done
             .then(function () {
               console.log("4. Added pic URL to Firestore.");
-              // One last thing to do:
-              // save this postID into an array for the OWNER
-              // so we can show "my posts" in the future
+
               savePostIDforUser(postDocID);
             });
         });
