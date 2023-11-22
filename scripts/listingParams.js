@@ -247,13 +247,17 @@ function processListing(userMadeThisPost, docid, userid) {
                     document.getElementById("deleteButton").innerText = "Loading...";
 
                     if (confirm("Are you sure you want to delete this listing? This cannot be undone!")) {
+                        //delete listing from database
                         db.collection("listings").doc(docid).delete();
 
+                        //delete picture from cloud storage
+                        storage.ref().child("images/" + docid + ".jpg").delete();
+                        
+                        //delete listing from user's myposts array
                         let userListing = db.collection("users").doc(userid)
                         userListing.update({
                             myposts: firebase.firestore.FieldValue.arrayRemove(docid)
                         }).then(i => {
-                            alert("listing deleted");
                             window.location.href = "./listings.html";
                         })
                     }
