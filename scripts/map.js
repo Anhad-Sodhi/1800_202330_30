@@ -36,17 +36,12 @@ function showMap() {
               allEvents.forEach((doc) => {
                 lat = doc.data().lat;
                 lng = doc.data().lng;
-                console.log(lat, lng);
                 coordinates = [lng, lat];
-                console.log(coordinates);
                 // Coordinates
                 event_name = doc.data().foodName; // Event Name
                 preview = doc.data().foodDescription; // Text Preview
                 idd = doc.id
                 
-                // img = doc.data().posterurl; // Image
-                // url = doc.data().link; // URL
-
                 // Pushes information into the features array
                 features.push({
                   type: "Feature",
