@@ -7,6 +7,7 @@ const submit = document.querySelector("#submit-button");
 const prodName = document.querySelector("#ProductName");
 
 function resetForm() {
+  submit.innerText = "Submit";
   document.getElementById("subForm").reset();
 }
 
@@ -47,6 +48,7 @@ function listenFileSelect() {
 listenFileSelect();
 
 function savePost() {
+  submit.innerText = "Loading...";
   closeModal.addEventListener("click", () => {
     modal.close();
   });
