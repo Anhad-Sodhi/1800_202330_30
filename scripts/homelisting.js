@@ -1,5 +1,5 @@
 // Variable to count iterations through the loop
-var count = 1;
+var count = -1;
 
 // This function loads the user's listings and two 'browse' listings onto the page
 async function doAll() {
@@ -25,10 +25,11 @@ async function doAll() {
                     ownPost = true;
                 }
             }
-
+            
+            console.log(ownPost);
             // If count is less than 3 and it's not the user's own post,
             // add a listing to the page (ensures there are only 2 listings)
-            if (!ownPost && count < 3) {
+            if ((!ownPost && count > -3)) {
 
                 // Create a listing div
                 var listing = document.createElement("div");
@@ -77,7 +78,7 @@ async function doAll() {
                 document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;
                 document.getElementById("listing" + count).style.backgroundImage = "url(" + image1 + ")";
 
-                count++;
+                count--;
             }
         })
 
