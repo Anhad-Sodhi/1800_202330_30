@@ -38,6 +38,13 @@ doAll();
 // This function populates the page based on whether it is the user's listing or not
 function processListing(userMadeThisPost, docid, userid) {
 
+    const updateModal = document.getElementById("modalUpdate");
+    const updateModalButton = document.getElementById("modal-update-button");
+
+    const deleteModal = document.getElementById("modalDelete");
+    const deleteModalButton = document.getElementById("modal-delete-button");
+    const cancelModalButton = document.getElementById("modal-cancel-button");
+
     // Create listings and populate them for each document in firebase
     // If the user made the listing, turn it into an input field instead of a p
     db.collection("listings").doc(docid).get().then(doc => {
@@ -238,21 +245,26 @@ function processListing(userMadeThisPost, docid, userid) {
                     theListing.update({
                         last_updated: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(i => {
-                        alert("update successful");
-                        location.reload();
+                        updateModal.showModal();
+                        updateModalButton.addEventListener("click", function () {
+                            updateModal.close();
+                            location.reload();
+                        })
                     })
                 });
             document.getElementById("deleteButton").addEventListener("click",
                 function () {
                     document.getElementById("deleteButton").innerText = "Loading...";
 
-                    if (confirm("Are you sure you want to delete this listing? This cannot be undone!")) {
+                    deleteModal.showModal();
+                    deleteModalButton.addEventListener("click", function () {
+                        deleteModal.close();
                         //delete listing from database
                         db.collection("listings").doc(docid).delete();
 
                         //delete picture from cloud storage
                         storage.ref().child("images/" + docid + ".jpg").delete();
-                        
+
                         //delete listing from user's myposts array
                         let userListing = db.collection("users").doc(userid)
                         userListing.update({
@@ -260,7 +272,11 @@ function processListing(userMadeThisPost, docid, userid) {
                         }).then(i => {
                             window.location.href = "./listings.html";
                         })
-                    }
+                    })
+                    cancelModalButton.addEventListener("click", function () {
+                        deleteModal.close();
+                        document.getElementById("deleteButton").innerText = "Delete";
+                    })
                 })
         };
     });

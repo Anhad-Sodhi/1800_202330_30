@@ -12,7 +12,7 @@ function resetForm() {
 }
 
 // modal js
-const modal = document.querySelector("#modal");
+const modal = document.querySelector("#modalSub");
 const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 
@@ -51,6 +51,7 @@ function savePost() {
   submit.innerText = "Loading...";
   closeModal.addEventListener("click", () => {
     modal.close();
+    window.location.href = "./listings.html";
   });
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
