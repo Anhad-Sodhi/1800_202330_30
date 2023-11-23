@@ -264,3 +264,9 @@ input#information {
 #footerBack {
     float: left;
 }
+
+h1, h2 {
+    /* padding-left: 2.5vw; */
+    display: flex;
+    justify-content: center;
+}
