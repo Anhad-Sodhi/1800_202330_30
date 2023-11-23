@@ -79,8 +79,8 @@ html, body {
     margin-right: 5%;
 }
 
-.listing-map {
-    padding: 5%;
+#map-container {
+    padding: 20px;
 }
 
 /* Style for own listing page */
