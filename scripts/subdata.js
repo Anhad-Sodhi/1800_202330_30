@@ -9,7 +9,6 @@ const prodName = document.querySelector("#ProductName");
 function resetForm() {
   submit.innerText = "Submit";
   document.getElementById("subForm").reset();
-  window.location.href = "./listings.html";
 }
 
 // modal js
@@ -52,6 +51,7 @@ function savePost() {
   submit.innerText = "Loading...";
   closeModal.addEventListener("click", () => {
     modal.close();
+    window.location.href = "./listings.html";
   });
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
