@@ -17,6 +17,8 @@ function showMap() {
       zoom: 17, // Starting zoom
     });
     // Adds map features
+    // map.addControl(new mapboxgl.NavigationControl());
+
     map.on("load", () => {
       // Defines map pin icon for events
       map.loadImage(

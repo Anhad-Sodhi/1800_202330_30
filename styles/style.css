@@ -79,6 +79,9 @@ html, body {
     margin-right: 5%;
 }
 
+.listing-map {
+    padding: 5%;
+}
 
 /* Style for own listing page */
 #descriptionForm {
