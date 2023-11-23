@@ -29,7 +29,7 @@ function showMap() {
 
           // READING information from "events" collection in Firestore
           db.collection("listings")
-            .get()
+            .where("email", "!=", firebase.auth().currentUser.email).get()
             .then((allEvents) => {
               const features = []; // Defines an empty array for information to be added to
 
@@ -41,7 +41,7 @@ function showMap() {
                 event_name = doc.data().foodName; // Event Name
                 preview = doc.data().foodDescription; // Text Preview
                 idd = doc.id
-                
+
                 // Pushes information into the features array
                 features.push({
                   type: "Feature",
