@@ -245,8 +245,8 @@ input#information {
 
 .navbar {
     margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
 }
 
 /* footer styling */
@@ -276,4 +276,14 @@ h1, h2 {
     /* padding-left: 2.5vw; */
     display: flex;
     justify-content: center;
+}
+.d-flex {
+    width: 95vw;
+}
+#searchSection {
+    margin: 0;
+    padding: 0;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    width: 95vw;
 }

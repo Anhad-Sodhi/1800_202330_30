@@ -9,6 +9,7 @@ const prodName = document.querySelector("#ProductName");
 function resetForm() {
   submit.innerText = "Submit";
   document.getElementById("subForm").reset();
+  window.location.href = "./listings.html";
 }
 
 // modal js
