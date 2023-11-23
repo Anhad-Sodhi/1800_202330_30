@@ -1,3 +1,7 @@
+html, body {
+    background-color: #FFFEF4;
+}
+
 /* Change mouse on listings */
 .list {
     cursor: pointer;
