@@ -40,8 +40,8 @@
 
     <!-- Importing Map -->
 
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -71,9 +71,23 @@
 
     <!-- map -->
     <div id="map-div">
-        <div id="map" style= "width: 100vw; height: 50vh"></div>
+        <div id="map" style="width: 100vw; height: 50vh"></div>
     </div>
-    
+
+    <!-- Modal -->
+    <dialog class="modal" id="modalUpdate">
+        <h2>Updated!</h2>
+        <p>Hooray! Your post has been updated! :D</p>
+        <button class="button close-button" id="modal-update-button">Close</button>
+    </dialog>
+
+    <dialog class="modal" id="modalDelete">
+        <h2>Delete post!</h2>
+        <p>Are you sure you want to delete your post? This cannot be undone! :D</p>
+        <button class="button close-button" id="modal-cancel-button">Cancel</button>
+        <button class="button close-button" id="modal-delete-button">Delete</button>
+    </dialog>
+
     <!-- footer -->
     <nav id="footerPlaceholder"></nav>
 

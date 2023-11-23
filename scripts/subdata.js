@@ -12,7 +12,7 @@ function resetForm() {
 }
 
 // modal js
-const modal = document.querySelector("#modal");
+const modal = document.querySelector("#modalSub");
 const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 
