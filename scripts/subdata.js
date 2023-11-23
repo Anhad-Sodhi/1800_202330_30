@@ -71,15 +71,11 @@ function savePost() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp() //current system time
       })
       .then((doc) => {
-        console.log("1. Post document added!");
-        console.log(doc.id);
         uploadPic(doc.id);
       });
       })
       
     } else {
-      // No user is signed in.
-      console.log("Error, no user signed in");
     }
   });
 }
@@ -93,14 +89,12 @@ function uploadPic(postDocID) {
 
     // AFTER .put() is done
     .then(function () {
-      console.log("2. Uploaded to Cloud Storage.");
       storageRef
         .getDownloadURL()
 
         // AFTER .getDownloadURL is done
         .then(function (url) {
           // Get URL of the uploaded file
-          console.log("3. Got the download URL.");
 
           db.collection("listings")
             .doc(postDocID)
@@ -109,7 +103,6 @@ function uploadPic(postDocID) {
             })
             // AFTER .update is done
             .then(function () {
-              console.log("4. Added pic URL to Firestore.");
 
               savePostIDforUser(postDocID);
             });
@@ -125,15 +118,12 @@ function uploadPic(postDocID) {
 //--------------------------------------------
 function savePostIDforUser(postDocID) {
   firebase.auth().onAuthStateChanged((user) => {
-    console.log("user id is: " + user.uid);
-    console.log("postdoc id is: " + postDocID);
     db.collection("users")
       .doc(user.uid)
       .update({
         myposts: firebase.firestore.FieldValue.arrayUnion(postDocID),
       })
       .then(() => {
-        console.log("5. Saved to user's document!");
         resetForm();
         modal.showModal();
         //window.location.href = "showposts.html";
