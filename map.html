@@ -35,6 +35,32 @@
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css" />
 
+  <style>
+    #loader {
+        border: 12px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 12px solid #027148;
+        width: 70px;
+        height: 70px;
+        animation: spin 1s linear infinite;
+    }
+
+    .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
   <!-- Importing Map -->
 
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
@@ -49,7 +75,7 @@
   <!-- Stuff for body goes here -->
   <!-- navbar -->
   <nav id="navbarPlaceholder"></nav>
-  
+  <div id="loader" class="center"></div>
 
   <!-- Map -->
   <div id="map" style="width: 100vw; height: 100vh"></div>
@@ -59,7 +85,21 @@
 
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
-
+  <script>
+    document.getElementById("map").onreadystatechange = function () {
+        if (document.getElementById("map").readyState !== "complete") {
+            document.querySelector(
+                "body").style.visibility = "hidden";
+            document.querySelector(
+                "#loader").style.visibility = "visible";
+        } else {
+            document.querySelector(
+                "#loader").style.display = "none";
+            document.querySelector(
+                "body").style.visibility = "visible";
+        }
+    };
+</script>
   <!-- Link to scripts of your own -->
   <script src="./scripts/firebaseAPI_TEAMBBY30.js"></script>
   <script src="./scripts/script.js"></script>
