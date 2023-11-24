@@ -20,6 +20,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * Mapbox api for the map
 * Techtips B01a for the saving a users post in firebase
 * Techtips M1 for the map displaying users location and having markers for posts
+* In map.html the script and style code was taken from (https://www.geeksforgeeks.org/how-to-show-page-loading-div-until-the-page-has-finished-loading/)
 
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
