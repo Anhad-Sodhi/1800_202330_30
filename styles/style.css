@@ -66,11 +66,16 @@ html, body {
 #email {
     margin-left: auto;
     display: inline;
+    order: 6;
+}
+#address {
+    display: inline;
     order: 5;
+    margin-left: auto;
 }
 #copyButton {
     margin-right: auto;
-    order: 6;
+    order: 7;
 }
 #information {
     text-align: center;
@@ -137,6 +142,9 @@ input#information {
     display: none;
 }
 #descriptionForm #copyButton {
+    display: none;
+}
+#descriptionForm #address {
     display: none;
 }
 
