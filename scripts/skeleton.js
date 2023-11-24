@@ -36,7 +36,16 @@ function footerSubmission() {
 }
 
 function logoutButton() {
-    if (confirm("Are you sure you want to log out?")) {
+    const logoutModal = document.getElementById("modalLogout");
+    const logoutModalCancelButton = document.getElementById("modal-logoutCancel-button");
+    const logoutModalButton = document.getElementById("modal-logout-button");
+
+    logoutModal.showModal();
+    logoutModalCancelButton.addEventListener("click", function () {
+        logoutModal.close();
+    })
+    logoutModalButton.addEventListener("click", function () {
+        logoutModal.close();
         window.location.href = "./index.html";
-    }
+    })
 }
