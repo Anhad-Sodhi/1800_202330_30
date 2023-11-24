@@ -51,10 +51,10 @@
   <form id="subForm">
     <div id="submission-form" novalidate>
       <input id="ProductName" class="form-control" type="text" placeholder="Product name"
-        aria-label="default input example" autofocus required>
+        aria-label="default input example" autofocus autocomplete="off" required>
       <div class="mb-3">
         <label for="food-photo" class="form-label" id="file-label">Upload images of your food</label>
-        <input class="form-control" type="file" id="food-photo" required>
+        <input class="form-control" type="file" id="food-photo" autocomplete="off" required>
       </div>
       <div class="form-floating" id="food-select">
         <select class="form-select" id="food-type" aria-label="Floating label" required>
@@ -72,12 +72,15 @@
       </div>
       <div class="form-floating mb-3">
         <textarea class="form-control" placeholder="Leave a comment here" id="food-description" style="height: 100px"
-          max="50" required></textarea>
+          max="10" required></textarea>
         <label for="floatingTextarea2">Description</label>
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+        <input type="text" class="form-control" id="address" placeholder="1234 Main St" autocomplete="off" required>
+        <label for="phone-number" class="form-label">Phone Number</label>
+        <input id="phone-number" class="form-control" type="text" placeholder="000-000-0000"
+        aria-label="default input example" autofocus autocomplete="off" required>
       </div>
       <button type="button" class="btn btn-success btn-lg btn-block open-button" id="submit-button"
         onclick="savePost()">Submit</button>

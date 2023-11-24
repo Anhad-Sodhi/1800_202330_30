@@ -1,5 +1,5 @@
 html, body {
-    background-color: rgb(245, 255, 247);
+    background-color: rgb(226, 249, 231);
 }
 
 /* Change mouse on listings */
@@ -15,6 +15,13 @@ html, body {
 }
 #brand {
     margin-top: 20px;
+}
+#noListings {
+    text-align: center;
+    font-size: 15pt;
+    margin-top: 21%;
+    margin-left: 6%;
+    margin-right: 6%;
 }
 
 /* Style for listing page  */
@@ -66,11 +73,23 @@ html, body {
 #email {
     margin-left: auto;
     display: inline;
+    order: 6;
+}
+#address {
+    width: 100%;
     order: 5;
+    margin-left: auto;
+    margin-right: auto;
+}
+#phoneNumber {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    order: 8;
 }
 #copyButton {
     margin-right: auto;
-    order: 6;
+    order: 7;
 }
 #information {
     text-align: center;
@@ -139,6 +158,13 @@ input#information {
 #descriptionForm #copyButton {
     display: none;
 }
+#descriptionForm #address {
+    display: none;
+}
+#descriptionForm #phoneNumber {
+    display: none;
+}
+
 
 /* modal styling */
 .modal {
@@ -212,10 +238,10 @@ input#information {
 
 /* Style for submission form page */
 #submission-form {
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
     padding: 10px;
-    margin-top: 25%;
+    margin-top: 10%;
 }
 
 #submission-form p {

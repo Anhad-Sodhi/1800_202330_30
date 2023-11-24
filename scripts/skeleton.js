@@ -16,6 +16,19 @@ function loadSkeleton() {
     });
 }
 
+function loadSkeletonLogin() {
+
+    firebase.auth().onAuthStateChanged(async function (user) {
+        if (!user) {                   //if the pointer to "user" object is not null, then someone is logged in
+            // User is signed in.
+            // Do something for the user here.
+            $('#footerPlaceholder').load('./text/loginFooter.html');
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+loadSkeletonLogin();
 loadSkeleton(); //invoke the function
 
 function footerSubmission() {

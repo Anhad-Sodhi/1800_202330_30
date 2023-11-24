@@ -5,6 +5,7 @@ const description = document.querySelector("#food-description");
 const address = document.querySelector("#address");
 const submit = document.querySelector("#submit-button");
 const prodName = document.querySelector("#ProductName");
+const phoneNumber = document.querySelector("#phone-number")
 
 function resetForm() {
   submit.innerText = "Submit";
@@ -67,6 +68,7 @@ function savePost() {
         address: address.value,
         user: userName,
         email: user.email,
+        phoneNumber: phoneNumber.value,
         lng: position.coords.longitude,
         lat: position.coords.latitude,
         last_updated: firebase.firestore.FieldValue.serverTimestamp() //current system time
