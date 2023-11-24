@@ -69,9 +69,16 @@ html, body {
     order: 6;
 }
 #address {
-    display: inline;
+    width: 100%;
     order: 5;
     margin-left: auto;
+    margin-right: auto;
+}
+#phoneNumber {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    order: 8;
 }
 #copyButton {
     margin-right: auto;
@@ -145,6 +152,9 @@ input#information {
     display: none;
 }
 #descriptionForm #address {
+    display: none;
+}
+#descriptionForm #phoneNumber {
     display: none;
 }
 
