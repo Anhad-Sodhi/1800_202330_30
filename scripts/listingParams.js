@@ -227,7 +227,7 @@ function processListing(userMadeThisPost, docid, userid) {
         document.getElementById("phoneNumber").innerHTML = doc.data().phoneNumber;
         document.getElementById("address").innerHTML = doc.data().address;
 
-
+        //Email/Phone number redirect function
         document.getElementById("email").addEventListener("click",
             function () {
                 window.location.href = "mailto:" + document.getElementById("email").innerText;
@@ -237,6 +237,7 @@ function processListing(userMadeThisPost, docid, userid) {
                 window.location.href = "tel:" + document.getElementById("phoneNumber").innerText;
             });
 
+        //Copy buttons for email/phone number
         document.getElementById("copyButtonEmail").addEventListener("click",
             function () {
                 let text = document.getElementById("email").innerText;
@@ -249,6 +250,7 @@ function processListing(userMadeThisPost, docid, userid) {
                 navigator.clipboard.writeText(text);
                 document.getElementById("copyButtonPhone").innerText = "done";
             });
+        //Submit/Delete button event listeners, with modals
         if (userMadeThisPost) {
             document.getElementById("submitButton").addEventListener("click",
                 function () {
@@ -256,6 +258,7 @@ function processListing(userMadeThisPost, docid, userid) {
 
                     let theListing = db.collection("listings").doc(docid);
 
+                    //if a value is not empty, update it
                     if (document.getElementById("productName").value.trim() != "") {
                         theListing.update({
                             foodName: document.getElementById("productName").value
@@ -274,6 +277,7 @@ function processListing(userMadeThisPost, docid, userid) {
                     theListing.update({
                         last_updated: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(i => {
+                        //update acknowledgement modal
                         updateModal.showModal();
                         updateModalButton.addEventListener("click", function () {
                             updateModal.close();
@@ -286,6 +290,7 @@ function processListing(userMadeThisPost, docid, userid) {
                     document.getElementById("deleteButton").innerText = "Loading...";
 
                     deleteModal.showModal();
+                    //if confirmation modal is confirmed
                     deleteModalButton.addEventListener("click", function () {
                         deleteModal.close();
                         //delete listing from database
@@ -302,6 +307,7 @@ function processListing(userMadeThisPost, docid, userid) {
                             window.location.href = "./listings.html";
                         })
                     })
+                    //if confirmation modal is cancelled
                     cancelModalButton.addEventListener("click", function () {
                         deleteModal.close();
                         document.getElementById("deleteButton").innerText = "Delete";
