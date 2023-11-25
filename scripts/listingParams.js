@@ -134,21 +134,27 @@ function processListing(userMadeThisPost, docid, userid) {
         }
 
 
-        //Copy
+        //Copy Email
         var copy = document.createElement("p");
         copy.setAttribute("class", "material-symbols-outlined")
-        copy.setAttribute("id", "copyButton");
+        copy.setAttribute("id", "copyButtonEmail");
         copy.setAttribute("style", "cursor: pointer")
+        //Copy Phone
+        var copy2 = document.createElement("p");
+        copy2.setAttribute("class", "material-symbols-outlined")
+        copy2.setAttribute("id", "copyButtonPhone");
+        copy2.setAttribute("style", "cursor: pointer")
         //Image
         var image = document.createElement("img");
         image.setAttribute("id", "productImage");
         //Email
         var email = document.createElement("a");
         email.setAttribute("id", "email");
-        email.setAttribute("href", "#")
+        email.setAttribute("href", "#");
         //Phone Number
-        var phoneNumber = document.createElement("p");
+        var phoneNumber = document.createElement("a");
         phoneNumber.setAttribute("id", "phoneNumber");
+        phoneNumber.setAttribute("href", "#");
         //Address
         var address = document.createElement("p");
         address.setAttribute("id", "address");
@@ -157,8 +163,9 @@ function processListing(userMadeThisPost, docid, userid) {
         descField.appendChild(email);
         descField.appendChild(copy);
         descField.appendChild(phoneNumber);
+        descField.appendChild(copy2);
         descField.appendChild(address);
-        
+
 
         // If it's the user's listing, populate the page with input fields
         if (userMadeThisPost) {
@@ -213,7 +220,8 @@ function processListing(userMadeThisPost, docid, userid) {
 
         // Update info on listing
         document.getElementById("userName").innerHTML = doc.data().user;
-        document.getElementById("copyButton").innerHTML = "content_copy";
+        document.getElementById("copyButtonEmail").innerHTML = "content_copy";
+        document.getElementById("copyButtonPhone").innerHTML = "content_copy";
         document.getElementById("productImage").src = image1;
         document.getElementById("email").innerHTML = doc.data().email;
         document.getElementById("phoneNumber").innerHTML = doc.data().phoneNumber;
@@ -224,12 +232,22 @@ function processListing(userMadeThisPost, docid, userid) {
             function () {
                 window.location.href = "mailto:" + document.getElementById("email").innerText;
             });
+        document.getElementById("phoneNumber").addEventListener("click",
+            function () {
+                window.location.href = "tel:" + document.getElementById("phoneNumber").innerText;
+            });
 
-        document.getElementById("copyButton").addEventListener("click",
+        document.getElementById("copyButtonEmail").addEventListener("click",
             function () {
                 let text = document.getElementById("email").innerText;
                 navigator.clipboard.writeText(text);
-                document.getElementById("copyButton").innerText = "done";
+                document.getElementById("copyButtonEmail").innerText = "done";
+            });
+        document.getElementById("copyButtonPhone").addEventListener("click",
+            function () {
+                let text = document.getElementById("phoneNumber").innerText;
+                navigator.clipboard.writeText(text);
+                document.getElementById("copyButtonPhone").innerText = "done";
             });
         if (userMadeThisPost) {
             document.getElementById("submitButton").addEventListener("click",
