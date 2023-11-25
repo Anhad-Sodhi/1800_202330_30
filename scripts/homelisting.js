@@ -17,7 +17,7 @@ async function doAll() {
             let ownPost = false;
 
             // Compare to see if each post is the user's or not
-            for (let i = 0; i < postinglist.length; i++) {
+            for (let i = 0; postinglist && i < postinglist.length; i++) {
                 let currentPost = postinglist[i];
 
                 // Create a listing on the page under browsing if the listing is not the user's
@@ -152,7 +152,7 @@ async function doAll() {
                 var noListings = document.createElement("p");
                 noListings.setAttribute("id", "noListings");
                 document.getElementById("yourListings2").appendChild(noListings);
-                document.getElementById("noListings").innerHTML = "You do not have any listings currently!";
+                document.getElementById("noListings").innerHTML = "You do not have any listings currently!" + "<br/>" + "To add a new listing, click the + button in the bottom right corner.";
             }
 
         });

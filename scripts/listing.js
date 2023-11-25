@@ -17,7 +17,7 @@ async function doAll() {
             let ownPost = false;
 
             // Compare to see if each post is the user's or not
-            for (let i = 0; i < postinglist.length; i++) {
+            for (let i = 0; postinglist && i < postinglist.length; i++) {
                 let currentPost = postinglist[i];
 
                 // Create a listing on the page if the listing is not the user's
@@ -29,7 +29,7 @@ async function doAll() {
             if (!ownPost) {
                 // Create a listing div
                 var listing = document.createElement("div");
-                listing.setAttribute("class", "list");
+                listing.setAttribute("class", "list " + doc.id);
                 listing.setAttribute("id", "listing" + count);
 
                 // If a listing is clicked, open the listing page and set var1= the doc id

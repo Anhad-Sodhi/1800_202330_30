@@ -78,7 +78,7 @@ async function doAll() {
                 var noListings = document.createElement("p");
                 noListings.setAttribute("id", "noListings");
                 document.getElementById("listings").appendChild(noListings);
-                document.getElementById("noListings").innerHTML = "You do not have any listings currently!";
+                document.getElementById("noListings").innerHTML = "You do not have any listings currently!" + "<br/>" + "To add a new listing, click the + button in the bottom right corner.";
             }
 
         });

@@ -18,7 +18,7 @@ function doAll() {
             let userListings = userDoc.data().myposts;
 
             // Loop through the user's listings to see if the page is one of theirs
-            for (let i = 0; i < userListings.length; i++) {
+            for (let i = 0; userListings && i < userListings.length; i++) {
                 if (userListings[i] == query) {
 
                     // If it is their listing, update  the boolean to true
@@ -147,8 +147,8 @@ function processListing(userMadeThisPost, docid, userid) {
         email.setAttribute("id", "email");
         email.setAttribute("href", "#")
         //Phone Number
-        // var phoneNumber = document.createElement("p");
-        // phoneNumber.setAttribute("id", "phoneNumber");
+        var phoneNumber = document.createElement("p");
+        phoneNumber.setAttribute("id", "phoneNumber");
         //Address
         var address = document.createElement("p");
         address.setAttribute("id", "address");
@@ -156,7 +156,7 @@ function processListing(userMadeThisPost, docid, userid) {
         descField.appendChild(userName);
         descField.appendChild(email);
         descField.appendChild(copy);
-        // descField.appendChild(phoneNumber);
+        descField.appendChild(phoneNumber);
         descField.appendChild(address);
         
 
@@ -216,7 +216,7 @@ function processListing(userMadeThisPost, docid, userid) {
         document.getElementById("copyButton").innerHTML = "content_copy";
         document.getElementById("productImage").src = image1;
         document.getElementById("email").innerHTML = doc.data().email;
-        // document.getElementById("phoneNumber").innerHTML = doc.data().;
+        document.getElementById("phoneNumber").innerHTML = doc.data().phoneNumber;
         document.getElementById("address").innerHTML = doc.data().address;
 
 
