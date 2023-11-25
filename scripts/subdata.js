@@ -16,6 +16,36 @@ const modal = document.querySelector("#modalSub");
 const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+test();
+
+
+
+
+
+
+
+
 // All the code below is from techtips chanel B01a
 
 function getNameFromAuth() {
@@ -134,4 +164,5 @@ function savePostIDforUser(postDocID) {
       });
   });
 }
+
 
