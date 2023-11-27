@@ -89,7 +89,7 @@ async function doAll() {
             var postinglist = test.data().myposts;
 
             // If they have listings then populate the page
-            if (postinglist) {
+            if (postinglist.length > 0) {
 
                 // Compare to see if each post is the user's or not
                 for (let i = 0; i < postinglist.length; i++) {
