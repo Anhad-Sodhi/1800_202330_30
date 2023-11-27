@@ -194,7 +194,7 @@ input#information {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    grid-template-rows: 60% 15% 25%;
+    grid-template-rows: 60% 20% 20%;
     grid-template-columns: 33% 33% 34%;
     margin-left: auto;
     margin-right: auto;
@@ -203,6 +203,7 @@ input#information {
     font-weight: bold;
     overflow: hidden;
     text-align: center;
+    white-space: nowrap;
 }
 .bkgClr {
     grid-row: 2 / span 2;
@@ -217,24 +218,36 @@ input#information {
     grid-column: 1 / span 1;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .userName {
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .price {
     grid-row: 2 / span 1;
     grid-column: 3 / span 1;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .info {
     grid-row: 3 / span 1;
     grid-column: 1 / span 3;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
