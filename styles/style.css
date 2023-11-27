@@ -84,10 +84,13 @@ html, body {
 #phoneNumber {
     display: inline;
     margin-left: auto;
-    margin-right: auto;
     order: 8;
 }
-#copyButton {
+#copyButtonPhone {
+    order: 9;
+    margin-right: auto;
+}
+#copyButtonEmail {
     margin-right: auto;
     order: 7;
 }
@@ -105,6 +108,9 @@ html, body {
 }
 
 /* Style for own listing page */
+#images {
+    margin-top: 10%;
+}
 #descriptionForm {
     text-align: center;
     display: flex;
