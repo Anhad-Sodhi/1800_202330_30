@@ -98,8 +98,10 @@ html, body {
     margin-right: 5%;
 }
 
-#map-container {
-    padding: 20px;
+#map-div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 45px;
 }
 
 /* Style for own listing page */
