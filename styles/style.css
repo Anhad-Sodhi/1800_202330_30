@@ -116,21 +116,21 @@ label[for=productName] {
     margin-top: 20px;
 }
 input#productName {
-    width: 60%;
+    width: 55%;
     margin-top: 17px;
 }
 label[for=price] {
-    width: 40%;
+    width: 18%;
     margin-top: 20px;
+    float: left;
 }
 #dollarSign {
-    /* width: 10% */
     display: inline;
     margin-top: 17px;
 }
 input#price {
     width: 30%;
-    margin-right: 20%;
+    margin-right: 40%;
     margin-top: 17px;
 }
 label[for=information] {
@@ -157,7 +157,10 @@ input#information {
 #descriptionForm #email {
     display: none;
 }
-#descriptionForm #copyButton {
+#descriptionForm #copyButtonEmail {
+    display: none;
+}
+#descriptionForm #copyButtonPhone {
     display: none;
 }
 #descriptionForm #address {
