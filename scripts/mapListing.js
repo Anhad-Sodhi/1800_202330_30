@@ -17,7 +17,7 @@ function showMap() {
       container: "map", // Container ID
       style: "mapbox://styles/dand5/clofy6cum004j01qg3xph52ua", // Styling URL
       center: [position.coords.longitude, position.coords.latitude], // Starting position
-      zoom: 17, // Starting zoom
+      zoom: 14, // Starting zoom
     });
     // Adds map features
     // map.addControl(new mapboxgl.NavigationControl());
