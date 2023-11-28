@@ -51,8 +51,8 @@
   <!-- form -->
   <form id="subForm">
     <div id="submission-form" novalidate>
-      <input id="ProductName" class="form-control" type="text" placeholder="Product name"
-        aria-label="default input example" autofocus autocomplete="off">
+      <label for="ProductName" class="form-label">Name</label>
+      <input id="ProductName" class="form-control" type="text" placeholder="Product name" autofocus autocomplete="off">
       <div class="mb-3">
         <label for="food-photo" class="form-label" id="file-label">Upload images of your food</label>
         <input class="form-control" type="file" id="food-photo" autocomplete="off">
@@ -64,9 +64,9 @@
           <option value="vegetable">Vegetable</option>
           <option value="other">Other</option>
         </select>
-        <label for="food-type" class="form-label" id="select-label">What type of food are you selling</label>
+        <label for="food-type" id="select-label">What type of food are you selling</label>
       </div>
-      <p>Enter price of your food</p>
+      <label for="food-price" class="form-label">Enter price of your food</label>
       <div class="input-group mb-3">
         <span class="input-group-text">$</span>
         <input type="number" class="form-control" id="food-price" aria-label="Amount (to the nearest dollar)" min="0">

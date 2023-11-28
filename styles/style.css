@@ -262,30 +262,28 @@ input#information {
 
 /* Style for submission form page */
 #submission-form {
-    height: 50vh;
+    height: 70vh;
     width: 100vw;
     padding: 10px;
-    margin-top: 10%;
 }
 
-#submission-form p {
-    padding-top: 15px;
+.form-label {
+    padding-top: 10px;
 }
 
+#select-label {
+    margin-top: 2%;
+}
 .btn-block {
     width: 100%;
-}
-
-.input-group{
-    padding-bottom: 20px;
 }
 
 .col-12 {
     padding-bottom: 20px;
 }
 
-#file-label {
-    padding-top: 5%;
+.form-floating {
+    padding-top: 10px;
 }
 
 .navbar {
