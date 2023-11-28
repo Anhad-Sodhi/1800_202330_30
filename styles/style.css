@@ -195,6 +195,60 @@ input#information {
     background: rgb(0 0 0 / 0.4);
   }
 
+#modalSub h2 {
+    grid-row: 1 / span 1;
+}
+
+#modalSub p {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#modalSub button {
+    margin-left: 38%;
+}
+
+#modalDelete p {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#modal-cancel-button {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#modalLogout p {
+    margin-top: 20%;
+    margin-bottom: 30%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#modal-logoutCancel-button{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#modalUpdate p {
+    margin-top: 20%;
+    margin-bottom: 30%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#modalUpdate button {
+    margin-left: 37%;
+}
+
 /* Style for browsing page */
 .list {
     display: grid;
