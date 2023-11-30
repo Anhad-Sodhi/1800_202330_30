@@ -13,7 +13,6 @@ var uiConfig = {
             name: user.displayName,                            //fill in the details
             email: user.email,                   
           }).then(function () {
-            console.log("New user added to firestore");
             window.location.assign("home.html");       //re-direct to main.html after signup
           }).catch(function (error) {
             console.log("Error adding new user: " + error);

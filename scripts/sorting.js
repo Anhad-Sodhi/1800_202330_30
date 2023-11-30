@@ -17,7 +17,6 @@ function sortByPriceAscending() {
         // compare each one
         return parseInt(a1) - parseInt(b1);
     })
-    console.log(sortedList);
 
     // clear listings on page and add listings in new sorted order
     document.getElementById('listings').innerHTML = "";
@@ -43,7 +42,6 @@ function sortByPriceDescending() {
         // compare each one
         return parseInt(b1) - parseInt(a1);
     })
-    console.log(sortedList);
 
     // clear listings on page and add listings in new sorted order
     document.getElementById('listings').innerHTML = "";

@@ -123,7 +123,6 @@ function savePost() {
 }
 
 function uploadPic(postDocID) {
-  console.log("inside uploadPic " + postDocID);
   const storageRef = storage.ref("images/" + postDocID + ".jpg");
 
   storageRef

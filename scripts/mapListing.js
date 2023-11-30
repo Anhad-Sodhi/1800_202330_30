@@ -130,7 +130,6 @@ function showMap() {
             position.coords.longitude,
             position.coords.latitude,
           ];
-          console.log(userLocation);
           if (userLocation) {
             map.addSource("userLocation", {
               type: "geojson",
@@ -317,7 +316,6 @@ function showListingMap() {
             position.coords.longitude,
             position.coords.latitude,
           ];
-          console.log(userLocation);
           if (userLocation) {
             map.addSource("userLocation", {
               type: "geojson",
