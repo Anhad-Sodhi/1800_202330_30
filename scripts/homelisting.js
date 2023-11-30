@@ -26,6 +26,7 @@ async function doAll() {
                 }
             }
             
+            console.log(ownPost);
             // If count is less than 3 and it's not the user's own post,
             // add a listing to the page (ensures there are only 2 listings)
             if ((!ownPost && count > -3)) {
@@ -88,7 +89,7 @@ async function doAll() {
             var postinglist = test.data().myposts;
 
             // If they have listings then populate the page
-            if (postinglist.length > 0) {
+            if (postinglist && postinglist.length > 0) {
 
                 // Compare to see if each post is the user's or not
                 for (let i = 0; i < postinglist.length; i++) {
