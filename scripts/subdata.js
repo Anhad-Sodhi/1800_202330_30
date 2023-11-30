@@ -167,7 +167,6 @@ function savePostIDforUser(postDocID) {
       .then(() => {
         resetForm();
         modal.showModal();
-        //window.location.href = "showposts.html";
       })
       .catch((error) => {
         console.error("Error writing document: ", error);
