@@ -12,8 +12,9 @@ Our team BBY30 is developing Almost Fresh™ to help people with excess food sha
 * HTML, CSS, JavaScript
 * Bootstrap 5.0 (Frontend library)
 * Firebase 8.0 (BAAS - Backend as a Service)
-* Logo.com to generate a logo image for the navbar (https://app.logo.com/)
+* Logo.com to generate a logo image for the navbar and favicon (https://app.logo.com/)
 * W3Schools for miscellaneous HTML, CSS and JavaScript information (https://www.w3schools.com/)
+* Google Material symbols and icons (https://fonts.google.com/icons)
 * Mapbox api for the map
 * Techtips B01a for the saving a users post in firebase
 * Techtips M1 for the map displaying users location and having markers for posts
@@ -38,7 +39,12 @@ What we'd like to build in the future:
 * ...
 * ...
 	
-## 7. Contents of Folder
+## 7. Contact
+* Anhad Sodhi - Email: asodhi9@my.bcit.ca, Discord: frost.ee
+* ...
+* ...
+
+## 8. Contents of Folder
 Content of the project folder:
 
 ```
@@ -56,7 +62,15 @@ It has the following subfolders and files:
 ├── styles                   # Folder for styles
     /blah.css                # 
 
-
+Firebase hosting files: 
+├── .firebase
+	/hosting..cache
+├── .firebaserc
+├── 404.html
+├── firebase.json
+├── firestore.indexes.json
+├── firestore.rules
+├── storage.rules
 
 ```
 
