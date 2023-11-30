@@ -1,7 +1,7 @@
-# Almost Fresh
+# AlmostFresh
 
 ## 1. Project Description
-Our team BBY30 is developing Almost Fresh™ to help people with excess food share that food with others so it does not go to waste by posting excess or imperfect food and produce [aimed towards farmers and regular people, unlike Too Good To Go™].
+Our team BBY30 is developing AlmostFresh™ to help people with excess food share that food with others so it does not go to waste by posting excess or imperfect food and produce [aimed towards farmers and regular people, unlike Too Good To Go™].
 
 ## 2. Names of Contributors
 * Hi, my name is Matt! I am excited to start working on a project together!
