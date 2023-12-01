@@ -55,10 +55,25 @@ Content of the project folder:
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
-├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
+├── images                   # Folder for images (all from logo.com)
+    /favicon2.ico            # The favicon used for the website
+    /indexImage.png          # The image used for the landing page
+    /logo.png                # The logo with the circle
+    /logo2.png               # The logo without the circle
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+    /authentication.js       # Handles the login process
+    /checkIfUser.js          # Redirects the user to login if they are on a page otehr than index/login
+    /homelisting.js          # Handles the listings and buttons on the home screen
+    /listing.js              # Handles the listings show on the browsing page
+    /listingParams.js        # Handles the information and buttons shown after clicking on a listing
+    /map.js                  # Handles the mapbox/display for the map page
+    /mapListing.js           # Handles the mapbox/display for the listing page
+    /myListings.js           # Handles the display for the your listings page
+    /script.js               # Handles the logout function
+    /search.js               # Handles the search bar in the browsing page
+    /skeleton.js             # Displays the navbar and footer for each page
+    /sorting.js              # Handles the sorting/filtering in the browsing page
+    /subdata.js              # Handles the submission page form/display
 ├── styles                   # Folder for styles
     /blah.css                # 
 
