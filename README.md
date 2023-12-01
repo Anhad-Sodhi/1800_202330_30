@@ -75,7 +75,7 @@ It has the following subfolders and files:
     /sorting.js              # Handles the sorting/filtering in the browsing page
     /subdata.js              # Handles the submission page form/display
 ├── styles                   # Folder for styles
-    /blah.css                # 
+    /style.css               # Handles all the styles
 
 Firebase hosting files: 
 ├── .firebase
