@@ -1,3 +1,5 @@
+//geeksforgeeks.org used for this code
+
 // This function enables the search bar functionality which is called on keypress
 function search() { 
 

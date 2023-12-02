@@ -1,3 +1,6 @@
+//Tech Tip B01b used for this code
+
+
 // Variable to count iterations through the loop
 var count = 1;
 

@@ -1,3 +1,5 @@
+//Tech Tip B01b used for this code
+
 // Variable to hold whether the post was made by the user or not initialized to false
 var userMadeIt = false;
 
@@ -134,31 +136,37 @@ function processListing(userMadeThisPost, docid, userid) {
         }
 
 
-        //Copy Email
+        // Create a paragraph section for copy email
         var copy = document.createElement("p");
         copy.setAttribute("class", "material-symbols-outlined")
         copy.setAttribute("id", "copyButtonEmail");
         copy.setAttribute("style", "cursor: pointer")
-        //Copy Phone
+        
+        // Create a paragraph section for copy phone number
         var copy2 = document.createElement("p");
         copy2.setAttribute("class", "material-symbols-outlined")
         copy2.setAttribute("id", "copyButtonPhone");
         copy2.setAttribute("style", "cursor: pointer")
-        //Image
+        
+        // Create an image section
         var image = document.createElement("img");
         image.setAttribute("id", "productImage");
-        //Email
+        
+        // Create an anchor section for email
         var email = document.createElement("a");
         email.setAttribute("id", "email");
         email.setAttribute("href", "#");
-        //Phone Number
+       
+        // Create an anchor section for phone number
         var phoneNumber = document.createElement("a");
         phoneNumber.setAttribute("id", "phoneNumber");
         phoneNumber.setAttribute("href", "#");
+       
         //Address
         var address = document.createElement("p");
         address.setAttribute("id", "address");
 
+        // Add the sections to the descField div
         descField.appendChild(userName);
         descField.appendChild(email);
         descField.appendChild(copy);
@@ -169,45 +177,56 @@ function processListing(userMadeThisPost, docid, userid) {
 
         // If it's the user's listing, populate the page with input fields
         if (userMadeThisPost) {
+            // Create an input section for description
             var information = document.createElement("input");
             information.setAttribute("id", "information");
             information.setAttribute("class", "info form-control");
             information.setAttribute("value", doc.data().foodDescription);
 
+            // Create a label section for description
             var informationLabel = document.createElement("label");
             informationLabel.setAttribute("for", "information");
             informationLabel.innerText = "Description:"
 
+            // Add the sections to the descField div
             descField.appendChild(informationLabel);
             descField.appendChild(information);
         }
 
         // Otherwise populate with the regular listing information
         else {
+            // Create a paragraph section for information
             var information = document.createElement("p");
             information.setAttribute("id", "information");
             information.setAttribute("class", "info");
 
+            // Add the section to the descField div
             descField.appendChild(information);
+
+            // Populate the section with data from firebase
             document.getElementById("information").innerHTML = doc.data().foodDescription;
         }
 
+        // If it's the user's listing, add an submit and delete button
         if (userMadeThisPost) {
+            // Create a button for submit
             let submitButton = document.createElement("button");
             submitButton.setAttribute("type", "button");
             submitButton.setAttribute("id", "submitButton");
             submitButton.setAttribute("class", "form-control btn btn-success");
             submitButton.innerText = "Update";
 
+            // Add the button to the descField div
             descField.appendChild(submitButton);
 
-
+            // Create a button for delete
             let deleteButton = document.createElement("button");
             deleteButton.setAttribute("type", "button");
             deleteButton.setAttribute("id", "deleteButton");
             deleteButton.setAttribute("class", "form-control btn btn-danger");
             deleteButton.innerText = "Delete";
 
+            // Add the button to the descField div
             descField.appendChild(deleteButton);
         }
 
@@ -215,7 +234,7 @@ function processListing(userMadeThisPost, docid, userid) {
         const imgBack = document.getElementById("imageBackward");
         imgBack.insertAdjacentElement("afterend", image);
 
-
+        //get the image to use for the listing
         let image1 = doc.data().image;
 
         // Update info on listing

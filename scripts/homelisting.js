@@ -1,3 +1,6 @@
+//Tech Tip B01b used for this code
+
+
 // Variable to count iterations through the loop
 var count = -1;
 
@@ -157,9 +160,12 @@ async function doAll() {
         });
     })
 
+    // Add event listener to your listings text to go to your listings page
     document.getElementById("yourListingsHeader").addEventListener("click", function () {
         window.location.href = "./listings.html";
     })
+
+    // Add event listener to browse text to go to browse page
     document.getElementById("browseHeader").addEventListener("click", function () {
         window.location.href = "./browsing.html";
     })
