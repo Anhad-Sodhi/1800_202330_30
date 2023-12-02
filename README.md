@@ -36,9 +36,10 @@ Here are some known bugs:
 ## 6. Features for Future
 What we'd like to build in the future:
 * More sorting/filtering options
+* A profile page so the user can edit their default location, phone number, etc.
+* A way for the mapbox to display location based off the address entered by the user instead of the longitude/latitude at the time of posting
 * ...
-* ...
-	
+
 ## 7. Contact
 * Anhad Sodhi - Email: asodhi9@my.bcit.ca, Discord: frost.ee
 * ...
