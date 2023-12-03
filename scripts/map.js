@@ -16,8 +16,7 @@ function showMap() {
       center: [position.coords.longitude, position.coords.latitude], // Starting position
       zoom: 14, // Starting zoom
     });
-    // Adds map features
-    // map.addControl(new mapboxgl.NavigationControl());
+
 
     map.on("load", () => {
       // Defines map pin icon for events
@@ -191,6 +190,7 @@ function showMap() {
   });
 }
 
+//Map for a posts page which only shows the corresponding post and users location
 function showListingMap() {
   navigator.geolocation.getCurrentPosition((position) => {
     const userLocation = [position.coords.longitude, position.coords.latitude];

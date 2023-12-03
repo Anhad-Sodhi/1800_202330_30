@@ -41,12 +41,12 @@ What we'd like to build in the future:
 * More sorting/filtering options
 * A profile page so the user can edit their default location, phone number, etc.
 * A way for the mapbox to display location based off the address entered by the user instead of the longitude/latitude at the time of posting
-* ...
+* A working form validation system that requires every field on the listing page to be filled in before being able to post.
 
 ## 7. Contact
 * Anhad Sodhi - Email: asodhi9@my.bcit.ca, Discord: frost.ee
 * Matthew Dodd - Email: mdodd11@my.bcit.ca
-* ...
+* Dan Didac - Email: ddidac@my.bcit.ca
 
 ## 8. Contents of Folder
 Content of the project folder:

@@ -7,50 +7,12 @@ const submit = document.querySelector("#submit-button");
 const prodName = document.querySelector("#ProductName");
 const phoneNumber = document.querySelector("#phone-number")
 
+//Resets form fields after submit button is clicked
 function resetForm() {
   submit.innerText = "Submit";
   submissionForm.reset();
 }
 
-// submissionForm.addEventListener('submit', (e) => {
-//   e.preventDefault();
-
-//   checkInputs();
-// })
-
-// function checkInputs() {
-//   //trim whitespace
-//   prodName.value.trim();
-//   foodType.value.trim();
-//   price.value.trim();
-//   description.value.trim();
-//   address.value.trim();
-//   phoneNumber.value.trim();
-  
-//   if(prodName == '') {
-//     setErrorFor(ProductName, 'Product name cannot be blank');
-//   }
-//   else {
-//     setSuccessFor(ProductName);
-//   }
-
-//   if(price == '') {
-//     setErrorFor(food-price, 'Price cannot be blank');
-//   }
-//   else {
-//     setSuccessFor(food-price);
-//   }
-
-//   if(description == '') {
-//     setErrorFor(food-description, 'Description cannot be empty');
-//   }
-//   else {
-//     setSuccessFor(food-description);
-//   }
-
-
-
-// }
 // modal js
 const modal = document.querySelector("#modalSub");
 const openModal = document.querySelector(".open-button");
