@@ -26,9 +26,11 @@ Our team BBY30 is developing AlmostFresh™ to help people with excess food shar
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
 Here are the steps ...
-* ...
-* ...
-* ...
+* Click on "Login" or "Create an account"
+* That's it!
+* Create listings by clicking on the plus icon in the bottom right
+* Browse listings by clicking on the map icon at the top (to view listings on the map) or the "browse" text in the top dropdown menu (to view them as a list)
+* View, edit and delete your own listings by cliking on the "your listings" text in the top dropdown menu and clicking on the listing
 
 ## 5. Known Bugs and Limitations
 Here are some known bugs:
