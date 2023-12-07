@@ -51,10 +51,6 @@ function processListing(userMadeThisPost, docid, userid) {
             userDidntMakeElements(descField, doc);
             emailAndPhone();
         }
-
-        const imgBack = document.getElementById("imageBackward");
-        imgBack.insertAdjacentElement("afterend", image);
-
         //get the image to use for the listing
         let image1 = doc.data().image;
         document.getElementById("productImage").src = image1;
@@ -63,6 +59,11 @@ function processListing(userMadeThisPost, docid, userid) {
 
 function userMadeElements(descField, doc) {
     descField.setAttribute("id", "descriptionForm");
+
+    // Create an image section
+    var image = document.createElement("img");
+    image.setAttribute("id", "productImage");
+    descField.appendChild(image);
 
     // Create an input section for product name
     var productName = document.createElement("input");
@@ -133,6 +134,11 @@ function userMadeElements(descField, doc) {
     descField.appendChild(deleteButton);
 }
 function userDidntMakeElements(descField, doc) {
+    // Create an image section
+    var image = document.createElement("img");
+    image.setAttribute("id", "productImage");
+    descField.appendChild(image);
+    
     // Create a paragraph section for product name
     var productName = document.createElement("p");
     productName.setAttribute("class", "prodName");
@@ -171,10 +177,6 @@ function userDidntMakeElements(descField, doc) {
     copy2.setAttribute("class", "material-symbols-outlined")
     copy2.setAttribute("id", "copyButtonPhone");
     copy2.setAttribute("style", "cursor: pointer")
-
-    // Create an image section
-    var image = document.createElement("img");
-    image.setAttribute("id", "productImage");
 
     // Create an anchor section for email
     var email = document.createElement("a");
