@@ -56,39 +56,40 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when they come to url
-├── browsing.html            # browsing page
-├── home.html                # the landing page after the user logs in
-├── listing.html             # the listing information page when the user clicks on a listing
-├── listings.html            # the page that shows all of the user's listings
-├── login.html               # the login page
-├── map.html                 # the map page that shows all the listings
-├── submission.html          # the page to create a new listing
 └── README.md
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images (all from logo.com)
-    /favicon2.ico            # The favicon used for the website
-    /indexImage.png          # The image used for the landing page
-    /logo.png                # The logo with the circle
-    /logo2.png               # The logo without the circle
+    /favicon2.ico                # The favicon used for the website
+    /indexImage.png              # The image used for the landing page
+    /logo.png                    # The logo with the circle
+    /logo2.png                   # The logo without the circle
+├── pages                    # Folder for html pages
+    /index.html                  # landing HTML file, this is what users see when they come to url
+    /browsing.html               # browsing page
+    /home.html                   # the landing page after the user logs in
+    /listing.html                # the listing information page when the user clicks on a listing
+    /listings.html               # the page that shows all of the user's listings
+    /login.html                  # the login page
+    /map.html                    # the map page that shows all the listings
+    /submission.html             # the page to create a new listing
 ├── scripts                  # Folder for scripts
-    /authentication.js       # Handles the login process
-    /checkIfUser.js          # Redirects the user to login if they are on a page otehr than index/login
-    /homelisting.js          # Handles the listings and buttons on the home screen
-    /listing.js              # Handles the listings show on the browsing page
-    /listingParams.js        # Handles the information and buttons shown after clicking on a listing
-    /map.js                  # Handles the mapbox/display for the map page
-    /mapListing.js           # Handles the mapbox/display for the listing page
-    /myListings.js           # Handles the display for the your listings page
-    /script.js               # Handles the logout function
-    /search.js               # Handles the search bar in the browsing page
-    /skeleton.js             # Displays the navbar and footer for each page
-    /sorting.js              # Handles the sorting/filtering in the browsing page
-    /subdata.js              # Handles the submission page form/display
+    /authentication.js           # Handles the login process
+    /checkIfUser.js              # Redirects the user to login if they are on a page otehr than index/login
+    /homelisting.js              # Handles the listings and buttons on the home screen
+    /listing.js                  # Handles the listings show on the browsing page
+    /listingParams.js            # Handles the information and buttons shown after clicking on a listing
+    /map.js                      # Handles the mapbox/display for the map page
+    /mapListing.js               # Handles the mapbox/display for the listing page
+    /myListings.js               # Handles the display for the your listings page
+    /script.js                   # Handles the logout function
+    /search.js                   # Handles the search bar in the browsing page
+    /skeleton.js                 # Displays the navbar and footer for each page
+    /sorting.js                  # Handles the sorting/filtering in the browsing page
+    /subdata.js                  # Handles the submission page form/display
 ├── styles                   # Folder for styles
-    /style.css               # Handles all the styles
+    /style.css                   # Handles all the styles
 
 Firebase hosting files: 
 ├── .firebase
