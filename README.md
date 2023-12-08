@@ -57,6 +57,13 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when they come to url
+├── browsing.html            # browsing page
+├── home.html                # the landing page after the user logs in
+├── listing.html             # the listing information page when the user clicks on a listing
+├── listings.html            # the page that shows all of the user's listings
+├── login.html               # the login page
+├── map.html                 # the map page that shows all the listings
+├── submission.html          # the page to create a new listing
 └── README.md
 
 It has the following subfolders and files:
