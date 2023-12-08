@@ -33,7 +33,7 @@ async function doAll() {
             // add a listing to the page (ensures there are only 2 listings)
             if ((!ownPost && count > -3)) {
                 // Populate the listings
-                addYourListings(doc, count);
+                addListings(doc, count);
                 count--;
             }
         })
@@ -47,7 +47,7 @@ async function doAll() {
             // If they have listings then populate the page
             if (postinglist && postinglist.length > 0) {
 
-                addListings(postinglist, doc);
+                addYourListings(postinglist, doc);
                     
                 // If they don't have listings, print out a message
             } else {
@@ -71,7 +71,7 @@ async function doAll() {
 };
 
 // Adds listings that are not the user's
-function addYourListings(doc, count) {
+function addListings(doc, count) {
     // Create a listing div
     var listing = document.createElement("div");
     listing.setAttribute("class", "list");
@@ -120,7 +120,8 @@ function addYourListings(doc, count) {
     document.getElementById("listing" + count).style.backgroundImage = "url(" + image + ")";
 }
 
-function addListings(postinglist, doc){
+// Adds your own listings to the page
+function addYourListings(postinglist, doc){
     // Compare to see if each post is the user's or not
     for (let i = 0; i < postinglist.length; i++) {
         let currentPost = postinglist[i];
@@ -176,6 +177,7 @@ function addListings(postinglist, doc){
             document.getElementById("listing" + i).style.backgroundImage = "url(" + image1 + ")";
 }}}
 
+// If the user has no listings, puts text on the page
 function noListings(){
     var noListings = document.createElement("p");
     noListings.setAttribute("id", "noListings");
