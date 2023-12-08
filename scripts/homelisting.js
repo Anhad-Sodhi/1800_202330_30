@@ -32,9 +32,9 @@ async function doAll() {
             // If count is less than 3 and it's not the user's own post,
             // add a listing to the page (ensures there are only 2 listings)
             if ((!ownPost && count > -3)) {
-                
                 // Populate the listings
                 addYourListings(doc, count);
+                count--;
             }
         })
 
@@ -71,7 +71,7 @@ async function doAll() {
 };
 
 // Adds listings that are not the user's
-function addYourListings(doc, count){
+function addYourListings(doc, count) {
     // Create a listing div
     var listing = document.createElement("div");
     listing.setAttribute("class", "list");
@@ -110,16 +110,15 @@ function addYourListings(doc, count){
     document.getElementById("homeListings").appendChild(listing);
 
     //get the image to use for the listing
-    let image1 = doc.data().image;
+    let image = doc.data().image;
+    console.log(image);
 
     // Update info on the listing
     document.getElementById("productName" + count).innerHTML = doc.data().foodName;
     document.getElementById("userName" + count).innerHTML = doc.data().user;
     document.getElementById("information" + count).innerHTML = doc.data().foodDescription;
     document.getElementById("price" + count).innerHTML = "$" + doc.data().foodPrice;
-    document.getElementById("listing" + count).style.backgroundImage = "url(" + image1 + ")";
-
-    count--;
+    document.getElementById("listing" + count).style.backgroundImage = "url(" + image + ")";
 }
 
 function addListings(postinglist, doc){
