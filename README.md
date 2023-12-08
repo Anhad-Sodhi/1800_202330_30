@@ -54,6 +54,7 @@ Content of the project folder:
 
 ```
  Top level of project folder: 
+├── index.html               # landing HTML file, this is what users see when they come to url
 ├── .gitignore               # Git ignore file
 └── README.md
 
@@ -65,7 +66,6 @@ It has the following subfolders and files:
     /logo.png                    # The logo with the circle
     /logo2.png                   # The logo without the circle
 ├── pages                    # Folder for html pages
-    /index.html                  # landing HTML file, this is what users see when they come to url
     /browsing.html               # browsing page
     /home.html                   # the landing page after the user logs in
     /listing.html                # the listing information page when the user clicks on a listing
