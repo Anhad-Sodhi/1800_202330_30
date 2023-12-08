@@ -111,7 +111,6 @@ function addYourListings(doc, count) {
 
     //get the image to use for the listing
     let image = doc.data().image;
-    console.log(image);
 
     // Update info on the listing
     document.getElementById("productName" + count).innerHTML = doc.data().foodName;
@@ -122,11 +121,10 @@ function addYourListings(doc, count) {
 }
 
 function addListings(postinglist, doc){
-    console.log(postinglist);
     // Compare to see if each post is the user's or not
     for (let i = 0; i < postinglist.length; i++) {
         let currentPost = postinglist[i];
-        console.log(currentPost);
+        
         // Create a listing on the page if the listing is the user's
         if (doc.id == currentPost) {
 
