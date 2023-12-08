@@ -133,6 +133,7 @@ function userMadeElements(descField, doc) {
     // Add the button to the descField div
     descField.appendChild(deleteButton);
 }
+
 function userDidntMakeElements(descField, doc) {
     // Create an image section
     var image = document.createElement("img");
