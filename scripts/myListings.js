@@ -25,7 +25,7 @@ async function doAll() {
                 addListings(postinglist, doc);
 
             } else {
-                // If they don't have listings, print out a message
+                // If the user doesn't have listings, print out a message
                 noListings();
             }
 
