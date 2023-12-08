@@ -32,7 +32,7 @@ loadSkeletonLogin();
 loadSkeleton(); //invoke the function
 
 function footerSubmission() {
-    window.location.href = "./submission.html";
+    window.location.href = "./pages/submission.html";
 }
 
 function logoutButton() {
@@ -46,6 +46,6 @@ function logoutButton() {
     })
     logoutModalButton.addEventListener("click", function () {
         logoutModal.close();
-        window.location.href = "./index.html";
+        window.location.href = "./pages/index.html";
     })
 }
