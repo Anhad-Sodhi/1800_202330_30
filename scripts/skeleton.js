@@ -46,6 +46,6 @@ function logoutButton() {
     })
     logoutModalButton.addEventListener("click", function () {
         logoutModal.close();
-        window.location.href = "./pages/index.html";
+        window.location.href = "../pages/index.html";
     })
 }
