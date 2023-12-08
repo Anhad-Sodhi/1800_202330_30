@@ -8,8 +8,8 @@ function loadSkeleton() {
         if (user) {                   //if the pointer to "user" object is not null, then someone is logged in
             // User is signed in.
             // Do something for the user here.
-            $('#navbarPlaceholder').load('./text/navbar.html');
-            $('#footerPlaceholder').load('./text/footer.html');
+            $('#navbarPlaceholder').load('../text/navbar.html');
+            $('#footerPlaceholder').load('../text/footer.html');
         } else {
             // No user is signed in.
         }
@@ -22,7 +22,7 @@ function loadSkeletonLogin() {
         if (!user) {                   //if the pointer to "user" object is not null, then someone is logged in
             // User is signed in.
             // Do something for the user here.
-            $('#footerPlaceholder').load('./text/loginFooter.html');
+            $('#footerPlaceholder').load('../text/loginFooter.html');
         } else {
             // No user is signed in.
         }
