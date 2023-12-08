@@ -3,6 +3,7 @@ let allListings = document.getElementsByClassName('list');
 function sortByPriceAscending() {
     // sort listings by lowest price
     let sortedList = Array.from(allListings).sort(function (a, b) {
+        //get each price element
         a = a.getElementsByClassName('price')[0];
         b = b.getElementsByClassName('price')[0];
 
@@ -28,6 +29,7 @@ function sortByPriceAscending() {
 function sortByPriceDescending() {
     // sort listings by lowest price
     let sortedList = Array.from(allListings).sort(function (a, b) {
+        //get each price element
         a = a.getElementsByClassName('price')[0];
         b = b.getElementsByClassName('price')[0];
 
@@ -51,18 +53,23 @@ function sortByPriceDescending() {
 }
 
 function showOnlyFruits() {
+    //make an array of all the listings
     let arr = Array.from(allListings);
 
+    //clear the listings page
     document.getElementById('listings').innerHTML = "";
 
+    //for each listing that matches criteria, add it to the page
     for (let a = 0; a < arr.length; a++) {
+        //set the aid to the item id in the class
         let aid = arr[a].outerHTML;
-
         aid = aid.substring(17, 37);
 
         db.collection("listings").doc(aid).get().then(doc => {
+            //type of food
             let aType = doc.data().foodType;
 
+            //if the food type is fruit, add it to the shown listings
             if (aType == "fruit") {
                 document.getElementById('listings').appendChild(arr[a]);
             }
@@ -71,18 +78,23 @@ function showOnlyFruits() {
 }
 
 function showOnlyVegetables() {
+    //make an array of all the listings
     let arr = Array.from(allListings);
 
+    //clear the listings page
     document.getElementById('listings').innerHTML = "";
 
+    //for each listing that matches criteria, add it to the page
     for (let a = 0; a < arr.length; a++) {
+        //set the aid to the item id in the class
         let aid = arr[a].outerHTML;
-
         aid = aid.substring(17, 37);
 
         db.collection("listings").doc(aid).get().then(doc => {
+            //type of food
             let aType = doc.data().foodType;
 
+            //if the food type is vegetable, add it to the shown listings
             if (aType == "vegetable") {
                 document.getElementById('listings').appendChild(arr[a]);
             }
@@ -91,18 +103,23 @@ function showOnlyVegetables() {
 }
 
 function showOnlyOther() {
+    //make an array of all the listings
     let arr = Array.from(allListings);
 
+    //clear the listings page
     document.getElementById('listings').innerHTML = "";
 
+    //for each listing that matches criteria, add it to the page
     for (let a = 0; a < arr.length; a++) {
+        //set the aid to the item id in the class
         let aid = arr[a].outerHTML;
-
         aid = aid.substring(17, 37);
 
         db.collection("listings").doc(aid).get().then(doc => {
+            //type of food
             let aType = doc.data().foodType;
 
+            //if the food type is other, add it to the shown listings
             if (aType == "other") {
                 document.getElementById('listings').appendChild(arr[a]);
             }
