@@ -36,7 +36,6 @@ Here are the steps ...
 Here are some known bugs:
 * "You do not currently have any listings" message on home page does not show up if the user is in desktop mode
 * Blue pin (your location) sometimes does not load on the map page
-* ...
 
 ## 6. Features for Future
 What we'd like to build in the future:
@@ -46,9 +45,9 @@ What we'd like to build in the future:
 * A working form validation system that requires every field on the listing page to be filled in before being able to post.
 
 ## 7. Contact
-* Anhad Sodhi - Email: asodhi9@my.bcit.ca, Discord: frost.ee
+* Anhad Sodhi  - Email: asodhi9@my.bcit.ca, Discord: frost.ee
 * Matthew Dodd - Email: mdodd11@my.bcit.ca
-* Dan Didac - Email: ddidac@my.bcit.ca
+* Dan Didac    - Email: ddidac@my.bcit.ca
 
 ## 8. Contents of Folder
 Content of the project folder:
