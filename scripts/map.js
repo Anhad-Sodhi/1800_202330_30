@@ -170,7 +170,7 @@ function createEventFeatures(allEvents) {
       type: "Feature",
       properties: {
         id: doc.id,
-        description: `<strong>${event_name}</strong><p>${preview}</p> <p>$${listPrice}</p><a id="mapAnchor" href="/listing.html?var1=${idd} " target="_blank" title="Opens in a new window">Read more</a>`,
+        description: `<strong>${event_name}</strong><p>${preview}</p> <p>$${listPrice}</p><a id="mapAnchor" href="/pages/listing.html?var1=${idd} " target="_blank" title="Opens in a new window">Read more</a>`,
       },
       geometry: {
         type: "Point",
