@@ -1,5 +1,5 @@
 # AlmostFresh
-https://almostfresh-4ee10.web.app/pages/home.html
+https://almostfresh-4ee10.web.app
 ## 1. Project Description
 Our team BBY30 is developing AlmostFresh™ to help people with excess food share that food with others so it does not go to waste by posting excess or imperfect food and produce [aimed towards farmers and regular people, unlike Too Good To Go™].
 
