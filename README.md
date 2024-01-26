@@ -45,7 +45,7 @@ What we'd like to build in the future:
 * A working form validation system that requires every field on the listing page to be filled in before being able to post.
 
 ## 7. Contact
-* Anhad Sodhi  - Email: asodhi9@my.bcit.ca, Discord: frost.ee
+* Anhad Sodhi  - Email: asodhi9@my.bcit.ca
 * Matthew Dodd - Email: mdodd11@my.bcit.ca
 * Dan Didac    - Email: ddidac@my.bcit.ca
 
