@@ -44,12 +44,19 @@ What we'd like to build in the future:
 * A way for the mapbox to display location based off the address entered by the user instead of the longitude/latitude at the time of posting
 * A working form validation system that requires every field on the listing page to be filled in before being able to post.
 
-## 7. Contact
+## 7. Images
+![image](https://github.com/AnhadSodhi/AlmostFresh/assets/96636073/5564f6ba-e2ce-4555-a190-b2ff9eaf54ec)
+![image](https://github.com/AnhadSodhi/AlmostFresh/assets/96636073/2d575d6d-a8ef-43f6-891b-d2cf6d0ab7ad)
+![image](https://github.com/AnhadSodhi/AlmostFresh/assets/96636073/c9fe621f-5f98-42eb-9078-a3f89f82e936)
+![image](https://github.com/AnhadSodhi/AlmostFresh/assets/96636073/6939221d-5668-49d0-8b76-c29fdbdd388c)
+![image](https://github.com/AnhadSodhi/AlmostFresh/assets/96636073/e95f6960-234f-4b9a-aa3a-864b2e58cb39)
+
+## 8. Contact
 * Anhad Sodhi  - Email: asodhi9@my.bcit.ca
 * Matthew Dodd - Email: mdodd11@my.bcit.ca
 * Dan Didac    - Email: ddidac@my.bcit.ca
 
-## 8. Contents of Folder
+## 9. Contents of Folder
 Content of the project folder:
 
 ```
